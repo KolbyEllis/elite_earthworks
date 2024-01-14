@@ -6,13 +6,15 @@
 @media only screen and (min-width: 0em) {
   :root {
     /* Add these styles to your global stylesheet, which is used across all site pages. You only need to do this once. All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
-    --primary: #ff6a3e;
+    --primary: #B91D1F;
     --primaryLight: #ffba43;
-    --secondary: #ffba43;
+    --secondary: #EFEFEF;
     --secondaryLight: #ffba43;
-    --headerColor: #1a1a1a;
-    --bodyTextColor: #4e4b66;
+    --headerColor: #EFEFEF;
+    --headerBackgroundColor: #30312D;
+    --bodyTextColor: #EFEFEF;
     --bodyTextColorWhite: #fafbfc;
+    --backgroundColor: #272724;
     /* 13px - 16px */
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
     /* 31px - 49px */
@@ -24,6 +26,7 @@
   body {
     margin: 0;
     padding: 0;
+    background-color: var(--backgroundColor);
   }
   *,
   *:before,
@@ -63,39 +66,36 @@
   }
   .cs-button-solid {
     font-size: 1rem;
-    font-weight: bold;
-    line-height: 3.125em;
+    line-height: clamp(2.875em, 5.5vw, 1.5em);
     text-align: center;
-    text-transform: uppercase;
     text-decoration: none;
-    width: auto;
-    padding: 0 1.875rem;
-    color: #000;
+    font-weight: 600;
+    min-width: 8.5rem;
+    margin: 0;
+    box-sizing: border-box;
+    color: var(--secondary);
     background-color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 0.5rem;
+    padding: 0 1.5rem;
     display: inline-block;
     position: relative;
     z-index: 1;
-    transition: color 0.3s;
-    transition-delay: 0.1s;
+    transition: width 0.3s all;
   }
   .cs-button-solid:hover {
-    color: #fff;
+    color: var(--secondary);
+    background-color: var(--backgroundColor);
   }
   .cs-button-solid:hover:before {
     width: 100%;
   }
-  .cs-button-solid:before {
-    content: "";
-    width: 0;
-    height: 100%;
-    background-color: #000;
-    opacity: 1;
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: width 0.3s;
+  .red-line {
+    width: 50vw;
+    max-width: 30%;
+    height: 0.3rem;
+    background-color: var(--primary);
+    margin-bottom: 1rem;
   }
 }
 /* Fonts and general styles */
@@ -280,7 +280,7 @@ html {
     padding: 0.75rem 1rem;
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: var(--backgroundColor);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     position: fixed;
     top: 0;
@@ -292,7 +292,7 @@ html {
     width: 40%;
     max-width: 9.125rem;
     height: 100%;
-    background: var(--primary);
+    background: var(--backgroundColor);
     opacity: 1;
     position: absolute;
     display: block;
@@ -320,7 +320,7 @@ html {
   #cs-navigation.cs-active:after {
     width: 100%;
     max-width: 100%;
-    background-color: #484848;
+    background-color: var(--headerBackgroundColor);
   }
   #cs-navigation.cs-active:before {
     width: 100%;
@@ -424,7 +424,7 @@ html {
   #cs-navigation .cs-ul-wrapper {
     height: 100vh;
     opacity: 0;
-    background-color: #fff;
+    background-color: var(--backgroundColor);
     box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
     overflow: hidden;
     position: absolute;
@@ -525,6 +525,9 @@ html {
   #cs-navigation .cs-button-solid {
     display: none;
   }
+  #cs-navigation .phone {
+    display: none;
+  }
 }
 /* Dark Mode */
 @media only screen and (max-width: 63.9375rem) {
@@ -588,7 +591,7 @@ html {
     margin: 0;
     padding: 0 1.5rem 0 1.5rem;
     box-sizing: border-box;
-    background-color: var(--primary);
+    background-color: var(--backgroundColor);
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
@@ -746,11 +749,11 @@ html {
     padding: 0rem 1rem 0rem clamp(14.6875rem, 23vw, 26.25rem);
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: #30312D;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
     position: fixed;
     z-index: 10000;
   }
@@ -763,7 +766,7 @@ html {
     height: 100%;
     /* 32px - 64px */
     padding: 1rem clamp(2rem, 4vw, 4rem);
-    background-color: var(--primary);
+    background-color: #30312D;
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
     display: flex;
@@ -828,43 +831,15 @@ html {
     left: 0;
     transition: width 0.3s;
   }
-  #cs-navigation .cs-button-solid {
-    font-size: 1rem;
-    /* 46px - 56px */
-    line-height: clamp(2.875em, 5.5vw, 3.5em);
-    text-decoration: none;
-    font-weight: 700;
-    text-align: center;
-    margin: 0;
-    color: #fff;
-    min-width: 9.375rem;
-    padding: 0 1.5rem;
-    background-color: var(--primary);
-    border-radius: 0.25rem;
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-    /* prevents padding from adding to the width */
-    box-sizing: border-box;
+  #cs-navigation .phone {
+    color: var(--bodyTextColor);
+    white-space: nowrap;
+    margin-right: 2rem;
+    padding-left: 5rem;
   }
-  #cs-navigation .cs-button-solid:before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 0%;
-    background: #000;
-    opacity: 1;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    border-radius: 0.25rem;
-    transition: width 0.3s;
-  }
-  #cs-navigation .cs-button-solid:hover:before {
-    width: 100%;
-  }
-  #cs-navigation .cs-nav-button {
-    margin: 0 0 0 auto;
+  #cs-navigation .header-right {
+    display: flex;
+    align-items: center;
   }
 }
 /* Dark Mode */
@@ -976,7 +951,8 @@ html {
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #footer-1147 {
-    padding: var(--sectionPadding);
+    padding: 2rem;
+    margin-top: 2rem;
     position: relative;
     z-index: 1;
   }
@@ -1020,12 +996,12 @@ html {
     line-height: 1.5em;
     text-decoration: none;
     margin: 0;
-    color: #bababa;
+    color: var(--secondary);
     display: block;
     transition: color 0.3s;
   }
   #footer-1147 .cs-link:hover {
-    color: var(--secondary);
+    color: var(--primary);
   }
   #footer-1147 .cs-logo {
     width: 10.5rem;
@@ -1036,6 +1012,7 @@ html {
     width: 100%;
     height: auto;
     display: block;
+    padding-top: 2rem;
   }
   #footer-1147 .cs-bottom {
     width: 100%;
@@ -1058,7 +1035,7 @@ html {
   #footer-1147 .cs-social-link {
     width: 2rem;
     height: 2rem;
-    background-color: #484848;
+    background-color: var(--backgroundColor);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -1066,7 +1043,7 @@ html {
     transition: background-color 0.3s;
   }
   #footer-1147 .cs-social-link:hover {
-    background-color: var(--secondary);
+    background-color: var(--primary);
   }
   #footer-1147 .cs-social-link:hover .cs-social-icon {
     filter: grayscale(1) brightness(0);
@@ -1082,7 +1059,7 @@ html {
     font-size: 1rem;
     line-height: 1.5em;
     margin: 0;
-    color: #bababa;
+    color: var(--secondary);
     display: block;
   }
   #footer-1147 .cs-copyright-link {
@@ -1110,7 +1087,7 @@ html {
     display: block;
     height: 100%;
     width: 100%;
-    background: #1a1a1a;
+    background: var(--backgroundColor);
     opacity: 0.96;
     top: 0;
     left: 0;
@@ -1129,11 +1106,13 @@ html {
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
   #footer-1147 .cs-top {
+    padding-top: 5rem;
     flex-direction: row;
     justify-content: space-between;
   }
   #footer-1147 .cs-bottom {
     flex-direction: row;
     justify-content: space-between;
+    padding-bottom: 5rem;
   }
 }
