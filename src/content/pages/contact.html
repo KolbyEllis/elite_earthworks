@@ -1,8 +1,9 @@
 ---
 title: 'Contact'
 description: 'Meta description for the page'
-preloadImg: '/assets/images/cabinets2.jpg'
+preloadImg: '/assets/images/banner-photo.jpg'
 permalink: 'contact/'
+pageTitle: 'Contact'
 ---
 
 {% extends "layouts/base.html" %}
@@ -13,84 +14,152 @@ permalink: 'contact/'
 
 {% block body %}
 {% include 'components/interior-banner.html' %}
+                          
+<!-- ============================================ -->
+<!--                   Contact                    -->
+<!-- ============================================ -->
 
-    <!-- ============================================ -->
-    <!--                    LANDING                   -->
-    <!-- ============================================ -->
-
-    <section id="int-hero">
-        <h1 id="home-h">Contact Us</h1>
-        <picture>
-            <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-            <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
-        </picture>
-    </section>
-
-    <!-- ============================================ -->
-    <!--                Contact Form                  -->
-    <!-- ============================================ -->
-
-    <section id="cs-contact">
-        <div class="cs-container">
-            <form id="cs-form" name="Contact Form" method="post">
-                <div class="cs-content">
-                    <span class="cs-topper">Contact</span>
-                    <h2 class="cs-title">Get in Touch</h2>
-                    <p class="cs-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus elementum ullamcorper ipsum porttitor aliquam. Id magna urna ultrices odio pulvinar. Sed ut.
-                    </p>
-                </div>
-                <label>
+<section id="ContactForm-327">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Get in Touch</h2>
+            <p class="cs-text">
+                In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis.
+            </p>
+            <!--Form-->
+            <form class="cs-form" id="cs-form-323-327" name="Contact Form" method="post">
+                <label class="cs-label">
                     Name
-                    <input required type="text" id="name" name="name" placeholder="Name">
+                    <input class="cs-input" required type="text" id="name-323-327" name="name" placeholder="Name">
                 </label>
-                <label>
+                <label class="cs-label cs-email">
                     Email
-                    <input required type="text" id="email" name="email" placeholder="Email">
+                    <input class="cs-input" required type="text" id="email-323-327" name="email" placeholder="Email">
                 </label>
-                <label>
+                <label class="cs-label cs-phone">
                     Phone
-                    <input required type="text" id="phone" name="phone" placeholder="Phone">
+                    <input class="cs-input" required type="text" id="phone-323-327" name="phone" placeholder="Phone">
                 </label>
-                <label>
-                    How Did You Find Us
-                    <input type="text" id="find" name="find-us" placeholder="How did you find us?">
-                </label>
-                <label class="cs-label-message">
+                <label class="cs-label">
                     Message
-                    <textarea required name="Message" id="message" placeholder="Write message..."></textarea>
+                    <textarea class="cs-input cs-textarea" required name="Message" id="message-323-327" placeholder="Write message..."></textarea>
                 </label>
-                <button class="cs-button-solid" type="submit">Submit Message</button>
+                <button class="cs-button-solid cs-submit" type="submit">Make an Appointment</button>
             </form>
-            <div class="cs-right-section">
-                <!--Email-->
-                <span class="cs-header">Email</span>
-                <a class="cs-link" href="mailto:{{client.email}}">{{client.email}}</a>
-                <!--Phone-->
-                <span class="cs-header">Phone</span>
-                <a class="cs-link" href="tel:{{client.phoneForTel}}">{{client.phoneFormatted}}</a>
-                <!--Address-->
-                <span class="cs-header">Address</span>
-                <a class="cs-link" href="{{client.address.mapLink}}">
-                    {{client.address.lineOne}},
-                    <br />
-                    {{client.address.lineTwo}},
-                    <br />
-                    <span class="cs-block">
-                        {{client.address.city}}
-                        {{client.address.state}}
-                        {{client.address.zip}}
-                    </span>
-                </a>
-
-                <!-- Background Image-->
-                <picture class="cs-bg-picture">
-                    <source media="(min-width: 601px)" srcset="/assets/images/skyscraper.jpg">
-                    <img aria-hidden="true" decoding="async" src="/assets/images/skyscraper.jpg" alt="building" loading="lazy" width="2500" height="1667">
-                </picture>
-
-            </div>
         </div>
-    </section>
+        <!--Map Image, pin is made in the Figma then export as one image-->
+        <picture class="cs-map">
+            <source media="(max-width: 600px)" srcset="/assets/images/contact-us.jpg">
+            <source media="(min-width: 601px)" srcset="/assets/images/contact-us.jpg">
+            <img decoding="async" src="/assets/images/contact-us.jpg" alt="map" width="610" height="425" aria-hidden="true">
+        </picture>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                Contact Strip                 -->
+<!-- ============================================ -->
+
+<!-- No headers, so no section tag -->
+<div id="ContactStrip-327">
+    <ul class="cs-stat-group">
+        <li class="cs-item">
+            <picture class="cs-picture">
+                <img class="cs-icon" src="https://csimg.nyc3.digitaloceanspaces.com/Contact-Page/phone-grey.svg" alt="icon" width="35" height="40" loading="lazy" decoding="async" aria-hidden="true">
+            </picture>
+            <div class="cs-flex-group">
+                <span class="cs-header">Phone</span>
+                <a href="tel:555-456-7899" class="cs-link">+1 (555) 456 7899</a>
+                <a href="tel:555-456-7899" class="cs-link">+1 (555) 456 7899</a>
+            </div>
+        </li>
+        <li class="cs-item">
+            <picture class="cs-picture">
+                <img class="cs-icon" src="https://csimg.nyc3.digitaloceanspaces.com/Contact-Page/pin-grey.svg" alt="icon" width="40" height="35" loading="lazy" decoding="async" aria-hidden="true">
+            </picture>
+            <div class="cs-flex-group">
+                <span class="cs-header">Address</span>
+                <a href="" class="cs-link">123 Fake St, STE 100 <br> Somewhere, FL 98755</a>
+            </div>
+        </li>
+        <li class="cs-item">
+            <picture class="cs-picture">
+                <img class="cs-icon" src="https://csimg.nyc3.digitaloceanspaces.com/Contact-Page/clock-grey.svg" alt="icon" width="40" height="40" loading="lazy" decoding="async" aria-hidden="true">
+            </picture>
+            <div class="cs-flex-group">
+                <span class="cs-header">Open Hours</span>
+                <span class="cs-hours">Monday To Saturday</span>
+                <span class="cs-hours">9:00 AM - 10:30 PM</span>
+            </div>
+        </li>
+    </ul>
+</div>
+
+<!-- ============================================ -->
+<!--                    FAQ                       -->
+<!-- ============================================ -->
+
+<section id="ContactFAQ-327">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Frequently Asked Questions</h2>
+        </div>
+        <div class="cs-flex-group">
+            <ul class="cs-faq-group">
+                <!-- Active class added as default -->
+                <li class="cs-faq-item active">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            What is the difference between a lawyer and an attorney?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        In the U.S., the terms lawyer and attorney are often used interchangeably. A lawyer provides legal services such as giving legal advice, writing legal documents and providing policy counsel to governments. An attorney, on top of these things also holds a state or regional license to represent clients in a law court.
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            How do I get started?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            I'm New to the United States and Need an Attorney. Can I Hire a Stitch Lawyer Instead?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            What Do Lawyers Do? Do They Spend Most of Their Time Arguing Cases in Court?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                    </p>
+                </li>
+                <li class="cs-faq-item">
+                    <button class="cs-button">
+                        <span class="cs-button-text">
+                            May a Lawyer Who Is Licensed in One State Practice Law in Another State?
+                        </span>
+                    </button>
+                    <p class="cs-item-p">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sit convallis nunc neque, bibendum pulvinar vitae commodo velit. Proin diam tortor sed malesuada nunc, habitant. Dignissim ipsum porta enim, magna urna, quam. 
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+                                
 {% endblock %}

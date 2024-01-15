@@ -19,11 +19,6 @@
     /* 48px - 64px */
     gap: clamp(3rem, 6vw, 4rem);
   }
-  #sbsr-599 .exp-button-container {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-  }
   #sbsr-599 .cs-content {
     /* set text align to left if content needs to be left aligned */
     text-align: left;
@@ -83,10 +78,6 @@
   #sbsr-599 .cs-content {
     width: 45%;
     padding: 0;
-  }
-  #sbsr-599 .exp-button-container {
-    display: flex;
-    gap: 1rem;
   }
 }
 /* Dark Mode */
