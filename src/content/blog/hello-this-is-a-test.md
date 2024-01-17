@@ -24,9 +24,11 @@ click the <https://www.youtube.com/results?search_query=key+and+peele+chef> now 
 
 <a href="<https://www.youtube.com/results?search_query=key+and+peele+chef>">link </a> to watch a funny video!
 
+```
+<a href="https://www.youtube.com/results?search_query=key+and+peele+chef">link </a> to watch a funny video!
+```
 
-
-[](https://eliteearthworks.netlify.app/)[](https://www.youtube.com/results?search_query=key+and+peele+chef)
+``[``](https://eliteearthworks.netlify.app/)``[``](https://www.youtube.com/results?search_query=key+and+peele+chef)`<a href="`[`https://www.youtube.com/results?search_query=key+and+peele+chef`](https://www.youtube.com/results?search_query=key+and+peele+chef)`">link </a> to watch a funny video!`
 
 ![test](/assets/images/blog/landing.jpg "clean")
 
