@@ -328,7 +328,7 @@
         z-index: 100;
 
         &:after {
-            /* on hover green bar */
+            /* on hover red bar */
             content: '';
             width: 40%;
             max-width: (146/16rem);
@@ -495,7 +495,7 @@
         }
         
         .cs-link {
-            font-size: (14/16rem);
+            font-size: (11/16rem);
             line-height: 1.5em;
             text-align: inherit;
             text-decoration: none;
@@ -649,7 +649,7 @@
             }
         }
 
-        .cs-li-link {
+        .cs-li-link, .cs-li-link-c {
             /* 16px - 24px */
             font-size: clamp(1rem, 2.5vw, 1.5rem);
             line-height: 1.2em;
@@ -857,7 +857,7 @@
             margin: 0;
             padding: 0 (24/16rem) 0 (24/16rem);
             box-sizing: border-box;
-            background-color: var(--headerBackgroundColor);
+            background-color: var(--backgroundColor);
             overflow: hidden;
             opacity: 0;
             visibility: hidden;
@@ -1198,6 +1198,10 @@
             }
         }
 
+        .cs-li-link-c {
+            display: none;
+        }
+
         .cs-bottom-bar {
             width: 100%;
             /* 235px - 420px */
@@ -1290,7 +1294,7 @@
             }
 
             .cs-logo {
-                background-color: var(--medium);
+                background-color: var(--dark);
             }
 
             .cs-picture {

@@ -4,7 +4,7 @@
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #ContactForm-327 {
-    padding: var(--sectionPadding);
+    padding: 2rem;
     position: relative;
     z-index: 1;
   }
@@ -56,7 +56,7 @@
     padding: 0;
     padding-left: 1.5rem;
     border-radius: 0.5rem;
-    color: var(--headerColor);
+    color: black;
     background-color: var(--secondary);
     border: none;
     /* prevents padding from adding to height and width */
@@ -93,7 +93,7 @@
     /* clips the corners of the img tag */
     overflow: hidden;
     position: relative;
-    display: block;
+    display: none;
   }
   #ContactForm-327 .cs-map img {
     position: absolute;
@@ -132,6 +132,7 @@
     margin-left: 0;
   }
   #ContactForm-327 .cs-map {
+    display: block;
     height: auto;
     aspect-ratio: 630/701;
   }
@@ -167,7 +168,7 @@
 @media only screen and (min-width: 0rem) {
   #ContactStrip-327 {
     padding: var(--sectionPadding);
-    background-color: var(--secondary);
+    background-color: var(--headerBackgroundColor);
   }
   #ContactStrip-327 .cs-stat-group {
     width: 100%;
@@ -191,7 +192,7 @@
     align-items: center;
   }
   #ContactStrip-327 .cs-item:hover .cs-picture {
-    background-color: var(--secondary);
+    background-color: var(--backgroundColor);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     transform: scale(1.05);
   }
@@ -201,7 +202,6 @@
     /* 12px - 20px */
     margin-right: clamp(0.75rem, 3vw, 1.25rem);
     border-radius: 50%;
-    border: 1px solid var(--backgroundColor);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -233,7 +233,7 @@
     font-size: var(--bodyFontSize);
     line-height: 1.5em;
     text-decoration: none;
-    color: var(--backgroundColor);
+    color: var(--secondary);
     display: block;
   }
   #ContactStrip-327 .cs-link:hover {
@@ -267,169 +267,7 @@
   body.dark-mode #ContactStrip-327 .cs-hours {
     color: var(--bodyTextColorWhite);
   }
-}
-/*-- -------------------------- -->
-<---            FAQ             -->
-<--- -------------------------- -*/
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  #ContactFAQ-327 {
-    padding: var(--sectionPadding);
-  }
-  #ContactFAQ-327 .cs-container {
-    width: 100%;
-    max-width: 43.75rem;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* 48px - 64px */
-    gap: clamp(3rem, 6vw, 4rem);
-  }
-  #ContactFAQ-327 .cs-content {
-    /* set text align to left if content needs to be left aligned */
-    text-align: center;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    /* centers content horizontally, set to flex-start to left align */
-    align-items: center;
-  }
-  #ContactFAQ-327 .cs-title {
-    margin: 0;
-  }
-  #ContactFAQ-327 .cs-faq-group {
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-  #ContactFAQ-327 .cs-faq-item {
-    list-style: none;
-    width: 100%;
-    background-color: var(--secondary);
-    /* clips all corners of the button that overlap the rounded border */
-    overflow: hidden;
-    border-radius: 0.75rem;
-    transition: border-bottom 0.3s;
-  }
-  #ContactFAQ-327 .cs-faq-item.active .cs-button {
-    background-color: var(--primary);
-    color: var(--secondaryLight);
-  }
-  #ContactFAQ-327 .cs-faq-item.active .cs-button:before {
-    background-color: var(--secondaryLight);
-    transform: rotate(315deg);
-  }
-  #ContactFAQ-327 .cs-faq-item.active .cs-button:after {
-    background-color: var(--secondaryLight);
-    transform: rotate(-315deg);
-  }
-  #ContactFAQ-327 .cs-faq-item.active .cs-item-p {
-    height: auto;
-    /* 20px - 24px top & bottom */
-    /* 16px - 24px left & right */
-    padding: clamp(1.25rem, 1.3vw, 1.5rem) clamp(1rem, 2vw, 1.5rem);
-    opacity: 1;
-  }
-  #ContactFAQ-327 .cs-button {
-    font-size: 1rem;
-    line-height: 1.2em;
-    text-align: left;
-    font-weight: bold;
-    /* 16px - 20px */
-    padding: clamp(1rem, 1.3vw, 1.25rem);
-    background-color: #f7f7f7;
-    border: none;
-    color: var(--headerColor);
-    display: block;
-    width: 100%;
-    position: relative;
-    transition: background-color 0.3s, color 0.3s;
-  }
-  #ContactFAQ-327 .cs-button:hover {
-    cursor: pointer;
-  }
-  #ContactFAQ-327 .cs-button:before {
-    /* left line */
-    content: "";
-    width: 0.5rem;
-    height: 0.125rem;
-    background-color: var(--headerColor);
-    opacity: 1;
-    border-radius: 50%;
-    position: absolute;
-    display: block;
-    top: 50%;
-    right: 1.5rem;
-    transform: rotate(45deg);
-    /* animate the transform from the left side of the x axis, and the center of the y */
-    transform-origin: left center;
-    transition: transform 0.5s;
-  }
-  #ContactFAQ-327 .cs-button:after {
-    /* right line */
-    content: "";
-    width: 0.5rem;
-    height: 0.125rem;
-    background-color: var(--headerColor);
-    opacity: 1;
-    border-radius: 50%;
-    position: absolute;
-    display: block;
-    top: 50%;
-    right: 1.3125rem;
-    transform: rotate(-45deg);
-    /* animate the transform from the right side of the x axis, and the center of the y */
-    transform-origin: right center;
-    transition: transform 0.5s;
-  }
-  #ContactFAQ-327 .cs-button-text {
-    width: 80%;
-    display: block;
-  }
-  #ContactFAQ-327 .cs-item-p {
-    /* 14px - 16px */
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
-    line-height: 1.5em;
-    width: 90%;
-    height: 0;
-    margin: 0;
-    /* 16px - 24px */
-    padding: 0 clamp(1rem, 2vw, 1.5rem);
-    opacity: 0;
-    color: var(--bodyTextColor);
-    /* clips the text so it doesn't show up */
-    overflow: hidden;
-    transition: opacity 0.3s, padding-bottom 0.3s;
-  }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #ContactFAQ-327 .cs-title,
-  body.dark-mode #ContactFAQ-327 .cs-item-p {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #ContactFAQ-327 .cs-faq-item {
+  body.dark-mode #ContactStrip-327 .cs-picture {
     background-color: var(--accent);
-  }
-  body.dark-mode #ContactFAQ-327 .cs-faq-item.active .cs-button {
-    background-color: var(--secondaryLight);
-    color: var(--primary);
-  }
-  body.dark-mode #ContactFAQ-327 .cs-faq-item.active .cs-button:before,
-  body.dark-mode #ContactFAQ-327 .cs-faq-item.active .cs-button:after {
-    background-color: var(--primary);
-  }
-  body.dark-mode #ContactFAQ-327 .cs-button {
-    background-color: var(--accent);
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #ContactFAQ-327 .cs-button:before,
-  body.dark-mode #ContactFAQ-327 .cs-button:after {
-    background-color: var(--bodyTextColorWhite);
   }
 }
