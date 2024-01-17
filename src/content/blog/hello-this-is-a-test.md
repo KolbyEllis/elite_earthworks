@@ -20,12 +20,6 @@ Every construction project begins with a blueprint – a detailed plan outlining
 2. test
 3. test3
 
-```html
-<a href="https://www.youtube.com/results?search_query=key+and+peele+chef">link </a> to watch a funny video!
-```
-
-``
-
 ![test](/assets/images/blog/landing.jpg "clean")
 
 ## The Dance of Machines
