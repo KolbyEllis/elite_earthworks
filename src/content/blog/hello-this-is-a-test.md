@@ -20,9 +20,7 @@ Every construction project begins with a blueprint – a detailed plan outlining
 2. test
 3. test
 
-<a style="text-decoration:none" href="<https://www.youtube.com/results?search_query=key+and+peele+chef>[``](https://www.youtube.com/results?search_query=key+and+peele+chef)">Funny video</a>
-
-
+<https://www.youtube.com/results?search_query=key+and+peele+chef>
 
 
 
@@ -31,8 +29,6 @@ Every construction project begins with a blueprint – a detailed plan outlining
 ## The Dance of Machines
 
 Enter the construction site, a bustling arena where heavy machinery orchestrates a ballet of progress. Bulldozers sculpt the land, cranes hoist materials to great heights, and jackhammers echo determination. The rhythmic hum of machinery becomes a heartbeat, driving the pulse of development.
-
-
 
 > "Your mom" - Kolby Ellis
 
