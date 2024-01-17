@@ -29,8 +29,8 @@
     /* prevents padding from adding to the width */
     box-sizing: border-box;
     padding: 0 1.5rem;
-    color: #fff;
-    background-color: var(--headerColor);
+    color: var(--secondary);
+    background-color: var(--secondary);
     border-radius: 0.25rem;
     display: inline-block;
     position: relative;
@@ -42,9 +42,8 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    background: #fff;
+    background: var(--secondary);
     opacity: 0;
-    border: 1px solid var(--headerColor);
     border-radius: 0.25rem;
     position: absolute;
     top: 0;
@@ -53,7 +52,7 @@
     transition: opacity 0.3s;
   }
   .blog-link:hover {
-    color: var(--headerColor);
+    color: var(--secondary);
   }
   .blog-link:hover:before {
     opacity: 1;
@@ -78,7 +77,7 @@
     text-align: left;
     width: 100%;
     margin: 0;
-    color: #fff;
+    color: var(--secondary);
   }
   #header .blog-bg {
     width: 100%;
@@ -162,7 +161,7 @@
     margin: 0 auto;
     margin-top: 4.375rem;
     margin-bottom: 1.875rem;
-    color: #fff;
+    color: var(--secondary);
     position: relative;
   }
   #int-hero p {
@@ -171,7 +170,7 @@
     max-width: 25rem;
     margin: auto;
     margin-bottom: 1.875rem;
-    color: #fff;
+    color: var(--secondary);
     display: block;
   }
 }
@@ -256,7 +255,7 @@
   }
   .recent-articles .article-group {
     padding: clamp(30px, 5vw, 50px);
-    border: 1px solid #ebebeb;
+    border: 1px solid var(--secondary);
     border-radius: 0 0 0.5em 0.5em;
   }
   .recent-articles .blog-author-img {
@@ -285,7 +284,7 @@
   .recent-articles .blog-date {
     font-size: 0.875rem;
     line-height: 1.5em;
-    color: var(--bodyTextColor);
+    color: var(--secondary);
   }
   .recent-articles .blog-dot {
     width: 3px;
@@ -305,7 +304,7 @@
     font-size: 1rem;
     line-height: 1.5em;
     margin: 1rem 0 2rem;
-    color: var(--bodyTextColor);
+    color: var(--secondary);
   }
   .recent-articles .blog-link {
     font-size: 1rem;
@@ -319,7 +318,7 @@
     /* prevents padding from adding to the width */
     box-sizing: border-box;
     padding: 0 1.5rem;
-    color: #fff;
+    color: var(--secondary);
     background-color: var(--headerColor);
     border-radius: 0.25rem;
     display: inline-block;
@@ -332,7 +331,7 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    background: #fff;
+    background: var(--secondary);
     opacity: 0;
     border: 1px solid var(--headerColor);
     border-radius: 0.25rem;
@@ -361,12 +360,12 @@
   body.dark-mode .recent-articles .blog-desc,
   body.dark-mode .recent-articles .blog-author,
   body.dark-mode .recent-articles .blog-date {
-    color: #f7f7f7;
+    color: var(--secondary);
   }
   body.dark-mode .blog-sidebar .feature-h3,
   body.dark-mode .blog-sidebar .feature-date,
   body.dark-mode .blog-sidebar .blog-header {
-    color: #f7f7f7;
+    color: var(--secondary);
   }
   body.dark-mode .blog-sidebar .blog-header:after {
     background: var(--primary);
@@ -374,7 +373,7 @@
   body.dark-mode .blog-article .blog-h1,
   body.dark-mode .blog-article .blog-author,
   body.dark-mode .blog-article .blog-date {
-    color: #f7f7f7;
+    color: var(--secondary);
   }
   body.dark-mode .blog-article #blog-content h1,
   body.dark-mode .blog-article #blog-content h2,
@@ -382,15 +381,15 @@
   body.dark-mode .blog-article #blog-content h4,
   body.dark-mode .blog-article #blog-content h5,
   body.dark-mode .blog-article #blog-content h6 {
-    color: #f7f7f7;
+    color: var(--secondary);
   }
   body.dark-mode .blog-article #blog-content p,
   body.dark-mode .blog-article #blog-content li {
-    color: #f7f7f7;
+    color: var(--secondary);
     opacity: 0.8;
   }
   body.dark-mode .blog-article #blog-content a {
-    color: #9dafe5;
+    color: var(--secondary);
   }
 }
 /*-- -------------------------- -->
@@ -631,180 +630,5 @@
     margin: 1rem 0;
     border-radius: 0.5rem;
     display: block;
-  }
-}
-/*-- -------------------------- -->
-<---           Footer           -->
-<--- -------------------------- -*/
-/* Mobile - 360px */
-@media only screen and (min-width: 0em) {
-  #cs-footer {
-    font-family: "Roboto", "Arial", sans-serif;
-    /* 60px - 100px top and bottom */
-    padding: clamp(3.75em, 7.82vw, 6.25em) 1em;
-    background-color: #1a1a1a;
-  }
-  #cs-footer .cs-container {
-    width: 100%;
-    max-width: 80em;
-    margin: auto;
-  }
-  #cs-footer .cs-logo-group {
-    /* takes up all the space, lets the other ul's wrap below it */
-    width: 100%;
-    position: relative;
-  }
-  #cs-footer .cs-logo {
-    /* 210px - 240px */
-    width: clamp(13.125em, 8vw, 15em);
-    height: auto;
-    /* 28px - 44px */
-    margin-bottom: clamp(1.75em, 4.17vw, 2.75em);
-    display: block;
-  }
-  #cs-footer .cs-logo-img {
-    width: 100%;
-    height: auto;
-  }
-  #cs-footer .cs-text {
-    /* changes to 521px at desktop */
-    max-width: 21.5rem;
-    margin: 0;
-    margin-bottom: 2.5rem;
-    color: var(--bodyTextColorWhite);
-  }
-  #cs-footer .cs-nav {
-    margin: 0;
-    /* 32px - 40px */
-    margin-bottom: clamp(2em, 5.3vw, 2.5em);
-    padding: 0;
-    padding-left: 1em;
-  }
-  #cs-footer .cs-nav-li {
-    line-height: 1.5em;
-    list-style: none;
-  }
-  #cs-footer .cs-nav-li:last-of-type {
-    margin-bottom: 0;
-  }
-  #cs-footer .cs-header {
-    font-size: 1rem;
-    font-weight: 700;
-    line-height: 1.5em;
-    margin-bottom: 1.25rem;
-    color: var(--bodyTextColorWhite);
-    display: block;
-    position: relative;
-  }
-  #cs-footer .cs-nav-link {
-    font-size: 1rem;
-    line-height: 1.5em;
-    text-decoration: none;
-    color: var(--bodyTextColorWhite);
-    position: relative;
-  }
-  #cs-footer .cs-nav-link:before {
-    /* underline */
-    content: "";
-    width: 0%;
-    height: 0.125rem;
-    /* current color of the parent */
-    background: currentColor;
-    opacity: 1;
-    display: block;
-    position: absolute;
-    bottom: calc(-2 / 16 * 1rem);
-    left: 0;
-    transition: width 0.3s;
-  }
-  #cs-footer .cs-nav-link:hover:before {
-    width: 100%;
-  }
-  #cs-footer .cs-bottom {
-    width: 100%;
-    padding-left: 1em;
-    position: relative;
-  }
-  #cs-footer .cs-copyright {
-    font-size: 1rem;
-    line-height: 1.5em;
-    color: #b4b2c7;
-    display: block;
-  }
-  #cs-footer .cs-social {
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 0.75em;
-    position: absolute;
-    right: 1em;
-    bottom: 0;
-  }
-  #cs-footer .cs-social-link {
-    width: 1.5rem;
-    height: 1.5rem;
-    background-color: #4e4b66;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 1;
-    transition: transform 0.3s, background-color 0.3s;
-  }
-  #cs-footer .cs-social-link:hover {
-    background-color: var(--primary);
-    transform: translateY(calc(-3 / 16 * 1rem));
-  }
-  #cs-footer .cs-social-img {
-    width: auto;
-    height: 0.8125rem;
-    display: block;
-  }
-}
-/* Inbetween - 600px */
-@media only screen and (min-width: 37.5em) {
-  #cs-footer .cs-container {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-wrap: wrap;
-    /* 48px - 60px */
-    column-gap: clamp(3em, 5.9vw, 3.75em);
-  }
-}
-/* Tablet - 768px */
-@media only screen and (min-width: 48em) {
-  #cs-footer .cs-logo-group {
-    /* 20px - 60px */
-    margin-bottom: clamp(1.25em, 4vw, 3.75em);
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  #cs-footer .cs-logo {
-    margin: 0;
-  }
-  #cs-footer .cs-text {
-    text-align: right;
-    width: 50%;
-    max-width: 32.5625rem;
-    margin: 0;
-  }
-  #cs-footer .cs-nav {
-    padding: 0;
-  }
-  #cs-footer .cs-bottom {
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  #cs-footer .cs-social {
-    flex-direction: row;
-    position: relative;
-    right: auto;
-    /* reset these positions */
-    bottom: auto;
   }
 }

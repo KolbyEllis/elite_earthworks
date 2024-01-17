@@ -5,10 +5,9 @@
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
   #blog-1144 {
-    padding: var(--sectionPadding);
-    background-color: #fffbef;
     position: relative;
     z-index: 1;
+    padding: 0rem 2rem;
   }
   #blog-1144 .cs-container {
     width: 100%;
@@ -34,45 +33,6 @@
     /* max width of 18 characters, incldues spaces between words */
     max-width: 20ch;
   }
-  #blog-1144 .cs-button-solid {
-    font-size: 1rem;
-    /* 46px - 56px */
-    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-    text-decoration: none;
-    font-weight: 700;
-    text-align: center;
-    margin: 0;
-    color: #1a1a1a;
-    min-width: 12.5rem;
-    padding: 0 1.5rem;
-    background-color: var(--secondary);
-    border-radius: 0.5rem;
-    display: inline-block;
-    position: relative;
-    z-index: 1;
-    /* prevents padding from adding to the width */
-    box-sizing: border-box;
-    transition: color 0.3s;
-  }
-  #blog-1144 .cs-button-solid:before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 0%;
-    background: #000;
-    opacity: 1;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    border-radius: 0.5rem;
-    transition: width 0.3s;
-  }
-  #blog-1144 .cs-button-solid:hover {
-    color: #fff;
-  }
-  #blog-1144 .cs-button-solid:hover:before {
-    width: 100%;
-  }
   #blog-1144 .cs-card-group {
     width: 100%;
     padding: 0;
@@ -86,8 +46,7 @@
     list-style: none;
     border-radius: 1rem;
     overflow: hidden;
-    background-color: #f7f7f7;
-    border: 1px solid #e8e8e8;
+    background-color: var(--headerBackgroundColor);
     grid-column: span 12;
     display: flex;
     flex-direction: column;
@@ -107,7 +66,6 @@
     width: 100%;
     height: 15rem;
     background-color: #1a1a1a;
-    border-bottom: 4px solid var(--primary);
     overflow: hidden;
     display: block;
     /* prevents flexbox from squishing it */
@@ -135,24 +93,6 @@
     position: relative;
     z-index: 2;
   }
-  #blog-1144 .cs-date {
-    font-size: 1rem;
-    line-height: 1.2em;
-    font-weight: 700;
-    text-align: inherit;
-    margin: 0;
-    padding: 0.5rem 1rem;
-    /* prevents padding and border from affecting height and width */
-    box-sizing: border-box;
-    background-color: var(--primary);
-    border-radius: 0.5rem 0.5rem 0 0;
-    color: #fff;
-    display: inline-block;
-    position: absolute;
-    left: 1.5rem;
-    bottom: 100%;
-    z-index: 2;
-  }
   #blog-1144 .cs-h3 {
     font-size: 1.25rem;
     text-align: inherit;
@@ -176,7 +116,7 @@
     font-weight: 700;
     text-decoration: none;
     margin-top: auto;
-    color: var(--primary);
+    color: var(--secondary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -222,9 +162,6 @@
     left: 0;
     z-index: -1;
   }
-  body.dark-mode #blog-1144 .cs-topper {
-    color: var(--secondary);
-  }
   body.dark-mode #blog-1144 .cs-title,
   body.dark-mode #blog-1144 .cs-text,
   body.dark-mode #blog-1144 .cs-h3,
@@ -246,12 +183,6 @@
   body.dark-mode #blog-1144 .cs-picture {
     border-color: #fff;
   }
-  body.dark-mode #blog-1144 .cs-date {
-    background-color: #fff;
-  }
-  body.dark-mode #blog-1144 .cs-date {
-    color: var(--primary);
-  }
   body.dark-mode #blog-1144 .cs-arrow,
   body.dark-mode #blog-1144 .cs-floater {
     filter: grayscale(1) brightness(1000%);
@@ -264,13 +195,28 @@
 @media only screen and (min-width: 0rem) {
   #map-720 {
     min-height: 33.75rem;
-    padding: var(--sectionPadding);
     /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
+    /* Add the anchor tag around the entire container */
+  }
+  #map-720 a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    /* Ensure the anchor is above other elements */
+    /* Additional styles if needed */
+    text-decoration: none;
+    /* Remove underline */
+    cursor: pointer;
+    /* Show pointer cursor on hover */
   }
   #map-720 .cs-background {
     width: 100%;
@@ -289,5 +235,29 @@
     width: 100%;
     /* Makes img tag act as a background image */
     object-fit: cover;
+  }
+}
+/*-- -------------------------- -->
+<---          Gallery           -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #gallery-1234 {
+    padding: 2rem;
+  }
+  #gallery-1234 .cs-content {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #gallery-1234 .cs-title {
+    color: var(--secondary);
+  }
+}
+@media only screen and (min-width: 48rem) {
+  #gallery-1234 {
+    padding: 5rem;
   }
 }

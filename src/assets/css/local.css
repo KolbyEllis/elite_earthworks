@@ -254,7 +254,7 @@
     text-align: inherit;
     line-height: 1.2em;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--secondary);
     margin: 0 0 0.75rem 0;
     transition: color 0.3s;
   }
@@ -554,7 +554,7 @@
     padding: 0.5rem 1rem;
     /* prevents padding from affecting height and width */
     box-sizing: border-box;
-    background-color: #D1D3D4;
+    background-color: var(--secondary);
     color: #1a1a1a;
     display: inline-block;
     position: absolute;
@@ -568,7 +568,7 @@
     text-align: inherit;
     line-height: 1.2em;
     font-weight: 700;
-    color: var(--primary);
+    color: var(--secondary);
     /* 12px - 16px */
     margin: 0 0 clamp(0.75rem, 2vw, 1rem) 0;
     transition: color 0.3s;
