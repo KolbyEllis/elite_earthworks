@@ -1250,10 +1250,11 @@
   }
   #footer-1147 .cs-li {
     list-style: none;
+    padding: 0.2rem;
   }
   #footer-1147 .cs-link {
     /* 14px - 16px */
-    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    font-size: clamp(1rem, 1.5vw, 1rem);
     line-height: 1.5em;
     font-weight: 600;
     text-decoration: none;
