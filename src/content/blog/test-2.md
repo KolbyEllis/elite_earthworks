@@ -6,6 +6,7 @@ date: 2024-01-18T04:54:02.419Z
 tags:
   - post
   - featured
+  - bacon
 image: /assets/images/blog/expertise.jpg
 imageAlt: test
 pageTitle: Blog
