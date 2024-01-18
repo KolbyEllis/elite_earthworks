@@ -5,6 +5,7 @@ eleventyComputed:
     description: '{{ description }}'
     preloadImg: '{{ image }}'
     permalink: '/blog/{{ title | slug }}/index.html'
+    pageTitle: 'Blog'
 ---
 
 {% extends "layouts/base.html" %}
@@ -15,17 +16,6 @@ eleventyComputed:
 
 {% block body %}
 {% include 'components/interior-banner.html' %}
-    <!-- ============================================ -->
-    <!--                    LANDING                   -->
-    <!-- ============================================ -->
-
-    <section id="int-hero">
-        <picture>
-            <source media="(max-width: 600px)" srcset="/assets/images/cabinets2-m.jpg">
-            <source media="(min-width: 601px)" srcset="/assets/images/cabinets2.jpg">
-            <img aria-hidden="true" decoding="async" src="/assets/images/cabinets2.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
-        </picture>
-    </section>
 
     <!-- ============================================ -->
     <!--              Main Blog Content               -->
@@ -69,7 +59,7 @@ eleventyComputed:
             </article>
         </div>
         <!-- End .main-content -->
-
         {% include 'components/featured-post.html' %}
     </div>
+    {% include 'components/cta.html' %}
 {% endblock %}
