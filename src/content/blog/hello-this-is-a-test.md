@@ -23,8 +23,6 @@ Every construction project begins with a blueprint – a detailed plan outlining
 
 click the [link](https://www.youtube.com/results?search_query=key+and+peele+chef) to get started!
 
-![test](/assets/images/blog/landing.jpg "clean")
-
 ## The Dance of Machines
 
 Enter the construction site, a bustling arena where heavy machinery orchestrates a ballet of progress. Bulldozers sculpt the land, cranes hoist materials to great heights, and jackhammers echo determination. The rhythmic hum of machinery becomes a heartbeat, driving the pulse of development.
