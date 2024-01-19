@@ -6,7 +6,7 @@ date: 2024-01-18T22:46:48.293Z
 tags:
   - post
   - featured
-image: /assets/images/blog/expertise.jpg
+image: /assets/images/blog/expertise.webp
 imageAlt: standing with confidence. He's maybe thinking about his steak dinner
   after his shift
 pageTitle: Blog
