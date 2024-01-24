@@ -1,0 +1,23 @@
+---
+title: 'Careers'
+description: 'Meta description for the page'
+preloadImg: '/assets/images/banner-photo.jpg'
+permalink: 'careers/'
+pageTitle: 'Careers'
+eleventyNavigation:
+    key: Careers
+    order: 400
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/careers.css">
+{% endblock %}
+
+{% block body %}
+{% include 'components/interior-banner.html' %}
+
+<div id="BambooHR" data-domain="eliteearthworks.bamboohr.com" data-version="1.0.0" data-departmentId=""></div><script src="https://eliteearthworks.bamboohr.com/js/embed.js" type="text/javascript" async defer></script>
+
+{% endblock %}

@@ -45,6 +45,8 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
   }
 }
 /* Tablet - 768px */
@@ -118,6 +120,8 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
   }
 }
 /* Tablet - 768px */
@@ -146,60 +150,198 @@
   }
 }
 /*-- -------------------------- -->
-<---           Quote            -->
+<---          Services          -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #quote-561 {
-    display: none;
-    background-color: transparent;
-    background: url('/assets/images/quote.jpg') center center / cover no-repeat fixed;
+  #services-1302 {
     position: relative;
+    z-index: 10;
+    padding: 2rem;
+    padding-top: 1rem;
   }
-  #quote-561 .cs-content {
-    text-align: center;
-    padding: 5rem;
+  #services-1302 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* 48px - 64px */
+    gap: 1rem;
   }
-  #quote-561 .cs-container {
-    position: relative;
-    z-index: 1;
-    background-color: rgba(0, 0, 0, 0.8);
+  #services-1302 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
   }
-  #quote-561 .cs-quote {
-    font-size: 1.5em;
-    line-height: 1.2em;
-    font-weight: 600;
+  #services-1302 .cs-card-group {
+    width: 100%;
+    max-width: 80rem;
     margin: 0;
+    padding: 0 1rem;
+    /* prevents padding and border from affecting height and width */
+    background-color: var(--headerBackgroundColor);
+    box-shadow: 0px 4px 35px 0px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    position: relative;
+    z-index: 15;
+  }
+  #services-1302 .cs-item {
+    text-align: left;
+    list-style: none;
+    width: 100%;
+    border-bottom: 1px solid #e8e8e8;
+    box-sizing: border-box;
+    grid-column: span 12;
+    transition: background-color 0.3s, border-color 0.3s;
+  }
+  #services-1302 .cs-item:last-of-type {
+    border-bottom: none;
+  }
+  #services-1302 .cs-link {
+    text-decoration: none;
+    /* 24px - 60px top & Bottom */
+    /* 24px - 16px top & Bottom */
+    padding: clamp(1.5rem, 5.3vw, 3.75rem) clamp(1rem, 2.7vw, 2.5rem);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  #services-1302 .cs-h3 {
+    /* 20px - 25px */
+    font-size: clamp(1.25rem, 2vw, 1.5625rem);
+    font-weight: 700;
+    text-align: inherit;
+    line-height: 1.2em;
+    margin: 0 0 0.75rem 0;
     color: var(--headerColor);
-    padding-top: 2rem;
+    transition: color 0.3s;
   }
-  #quote-561 .cs-name {
-    font-size: clamp(1rem, 1.7vw, 1.25rem);
-    line-height: 1.2em;
-    font-weight: bolder;
+  #services-1302 .cs-item-text {
+    /* 14px - 16px */
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    text-align: inherit;
+    line-height: 1.5em;
     margin: 0;
-    padding-top: 2rem;
-    color: var(--secondary);
-    display: block;
-    letter-spacing: 0.01em;
-  }
-  #quote-561 .cs-company {
-    font-size: clamp(1rem, 1.7vw, 1.25rem);
-    line-height: 1.2em;
-    font-weight: 400;
-    font-style: italic;
-    margin: 0;
-    padding: 0.5rem;
-    color: var(--secondary);
-    display: block;
-    letter-spacing: 0.01em;
-    text-align: center;
-  }
-  #quote-561 .cs-name,
-  #quote-561 .cs-company {
-    color: white;
+    color: var(--bodyTextColor);
+    transition: color 0.3s, opacity 0.3s;
   }
 }
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #services-1302 .cs-content {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+  }
+  #services-1302 .cs-flex-group {
+    width: 50%;
+    /* prevents flexbox from squishing it */
+    flex: none;
+  }
+  #services-1302 .cs-item {
+    grid-column: span 4;
+    border-bottom: none;
+    border-right: 1px solid #e8e8e8;
+  }
+  #services-1302 .cs-item:nth-of-type(3) {
+    border-bottom: none;
+    border-right: none;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #services-1302 {
+    padding: 2rem;
+  }
+  #services-1302 .cs-card-group {
+    padding: 0;
+  }
+  #services-1302 .cs-item:hover {
+    background-color: #1a1a1a;
+    border-color: #1a1a1a;
+  }
+  #services-1302 .cs-item:hover .cs-h3,
+  #services-1302 .cs-item:hover .cs-item-text {
+    color: var(--bodyTextColorWhite);
+  }
+  #services-1302 .cs-item:hover .cs-item-text {
+    opacity: 0.8;
+  }
+  #services-1302 .cs-item:last-of-type {
+    border: none;
+  }
+}
+/*-- -------------------------- -->
+<---           Quote            -->
+<--- -------------------------- -*/
+/* Mobile - 360px 
+@media only screen and (min-width: 0rem) {
+    #quote-561 {
+      display: none;
+      background-color: transparent;
+      background: url('/assets/images/quote.jpg') center center/cover no-repeat fixed;
+      position: relative;
+    }
+    #quote-561 .cs-content {
+      text-align: center;
+      padding: 5rem;
+    }
+    #quote-561 .cs-container {
+      position: relative;
+      z-index: 1;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  
+    #quote-561 .cs-quote {
+      font-size: 1.5em;
+      line-height: 1.2em;
+      font-weight: 600;
+      margin: 0;
+      color: var(--headerColor);
+      padding-top: 2rem;
+    }
+  
+    #quote-561 .cs-name {
+      font-size: clamp(1rem, 1.7vw, 1.25rem);
+      line-height: 1.2em;
+      font-weight: bolder;
+      margin: 0;
+      padding-top: 2rem;
+      color: var(--secondary);
+      display: block;
+      letter-spacing: 0.01em;
+    }
+  
+    #quote-561 .cs-company {
+      font-size: clamp(1rem, 1.7vw, 1.25rem);
+      line-height: 1.2em;
+      font-weight: 400;
+      font-style: italic;
+      margin: 0;
+      padding: 0.5rem;
+      color: var(--secondary);
+      display: block;
+      letter-spacing: 0.01em;
+      text-align: center;
+    }
+  
+    #quote-561 .cs-name,
+    #quote-561 .cs-company {
+      color: white;
+    }
+  }
+                                */
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
   #quote-561 {
