@@ -1,0 +1,37 @@
+---
+title: 'Success'
+description: 'Meta description for the page'
+permalink: 'success/'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/success.css">
+{% endblock %}
+
+{% block body %}
+<!-- ============================================ -->
+<!--                   Video                      -->
+<!-- ============================================ -->
+
+<section id="video-1314">
+    <div class="cs-content">
+        <h2 class="cs-title">Form submission successsful</h2>
+    </div>
+    <a href="https://www.youtube.com/watch?v=Xnk-IpT3nQA" class="cs-big-link">
+        <!--Background Image-->
+        <picture class="cs-background">
+            <source media="(min-width: 1024px)" srcset="/assets/images/elite-thumbnail.png">
+            <source media="(min-width: 601px)" srcset="/assets/images/elite-thumbnail.png">
+            <source media="(max-width: 600px)" srcset="/assets/images/elite-thumbnail.png">
+            <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/elite-thumbnail.png" alt="meeting" width="1920" height="750">
+        </picture>
+        <!--Play Icon-->
+        <picture class="cs-picture">
+            <img class="cs-link-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/tax-play.svg" alt="play icon" width="24" height="24">
+        </picture>
+    </a>
+</section>
+
+{% endblock %}

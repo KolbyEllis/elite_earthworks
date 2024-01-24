@@ -1,0 +1,103 @@
+/*-- -------------------------- -->
+<---           Video            -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #video-1314 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+    padding-bottom: 2rem;
+    margin-top: 15rem;
+  }
+  #video-1314 .cs-big-link {
+    width: 100%;
+    /* 320px - 750px */
+    height: clamp(20rem, 65vw, 46.875rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  #video-1314 .cs-big-link:hover .cs-background img {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+  #video-1314 .cs-background {
+    width: 100%;
+    margin: 0rem 2rem;
+    height: 100%;
+    background-color: #1a1a1a;
+    /* clips the img from overflowing the container on hover */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  #video-1314 .cs-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.64;
+    object-fit: cover;
+    z-index: -1;
+    transition: transform 0.9s, opacity 0.3s;
+  }
+  #video-1314 .cs-picture {
+    /* 60px - 100px */
+    width: clamp(3.75rem, 11vw, 6.25rem);
+    height: clamp(3.75rem, 11vw, 6.25rem);
+    border-radius: 50%;
+    border: 2px solid #bababa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 10;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  #video-1314 .cs-picture:hover {
+    transform: scale(1.1);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 7px 29px 0px;
+  }
+  #video-1314 .cs-icon {
+    width: 1.5rem;
+    height: auto;
+    display: block;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #video-1314 .cs-background {
+    width: 100%;
+    margin: 0rem 5rem;
+    height: 100%;
+    background-color: #1a1a1a;
+    /* clips the img from overflowing the container on hover */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  #video-1314 .cs-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.64;
+    object-fit: cover;
+    z-index: -1;
+    transition: transform 0.9s, opacity 0.3s;
+  }
+}
