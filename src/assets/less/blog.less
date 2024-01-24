@@ -314,68 +314,6 @@
     }
 }
 
-/* Dark Mode */
-@media only screen and (min-width: 0em) {
-    body.dark-mode {
-        .recent-articles {
-            .blog-h1,
-            .blog-desc,
-            .blog-author,
-            .blog-date {
-                color: var(--secondary);
-            }
-            .article-group {
-                background-color: var(--dark);
-                border: 1px solid;
-            }
-        }
-
-        .blog-sidebar {
-            .feature-h3,
-            .feature-date,
-            .blog-header {
-                color: var(--secondary);
-            }
-            .blog-featured-group {
-                background-color: var(--dark);
-                border: 1px solid var(--secondary);
-            }
-            .blog-header {
-                &:after {
-                    background: var(--secondary);
-                }
-            }
-        }
-
-        .blog-article {
-            .blog-h1,
-            .blog-author,
-            .blog-date {
-                color: var(--secondary);
-            }
-
-            #blog-content {
-                h1,
-                h2,
-                h3,
-                h4,
-                h5,
-                h6 {
-                    color: var(--secondary);
-                }
-                p,
-                li {
-                    color: var(--secondary);
-                    opacity: 0.8;
-                }
-                a {
-                    color: var(--secondary);
-                }
-            }
-        }
-    }
-}
-
 /*-- -------------------------- -->
 <---          Sidebar           -->
 <--- -------------------------- -*/
@@ -931,43 +869,6 @@
 
             &:last-of-type {
                 border: none;
-            }
-        }
-    }
-}
-
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #services-1302 {
-            .cs-title,
-            .cs-text {
-                color: var(--bodyTextColorWhite);
-            }
-
-            .cs-text {
-                opacity: 0.8;
-            }
-
-            .cs-card-group {
-                background-color: rgba(0, 0, 0, 0.3);
-            }
-
-            .cs-item {
-                border-color: rgba(255, 255, 255, 0.1);
-                &:hover {
-                    background-color: rgba(0, 0, 0, 0.6);
-                    border-color: rgba(0, 0, 0, 0.6);
-                }
-            }
-
-            .cs-h3,
-            .cs-item-text {
-                color: var(--bodyTextColorWhite);
-            }
-
-            .cs-item-text {
-                opacity: 0.8;
             }
         }
     }

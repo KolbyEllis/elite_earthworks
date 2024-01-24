@@ -158,42 +158,6 @@
     }
 }
 
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #ContactForm-327 {
-
-            .cs-title,
-            .cs-text {
-                color: var(--bodyTextColorWhite);
-            }
-
-            .cs-form {
-                background-color: rgba(0, 0, 0, 0.2);
-            }
-
-            .cs-label {
-                color: var(--bodyTextColorWhite);
-            }
-
-            .cs-input {
-                background-color: rgba(255, 255, 255, 0.05);
-                color: var(--bodyTextColorWhite);
-                &::placeholder {
-                    color: var(--secondary);
-                    opacity: 0.5;
-                }
-            }
-
-            .cs-submit {
-                &:hover {
-                    color: var(--backgroundColor);
-                }
-            }
-        }
-    }
-}
-
 /*-- -------------------------- -->
 <---       Contact Strip        -->
 <--- -------------------------- -*/
@@ -310,23 +274,6 @@
             max-width: (1280/16rem);
             flex-wrap: nowrap;
             justify-content: space-evenly;
-        }
-    }
-}
-
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-    body.dark-mode {
-        #ContactStrip-327 {
-            background-color: rgba(0, 0, 0, 0.2);
-            .cs-header,
-            .cs-link,
-            .cs-hours {
-                color: var(--bodyTextColorWhite);
-            }
-            .cs-picture {
-                background-color: var(--accent);
-            }
         }
     }
 }

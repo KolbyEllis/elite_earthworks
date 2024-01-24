@@ -273,52 +273,6 @@
     max-width: 31.25rem;
   }
 }
-/* Dark Mode */
-@media only screen and (min-width: 0em) {
-  body.dark-mode .recent-articles .blog-h1,
-  body.dark-mode .recent-articles .blog-desc,
-  body.dark-mode .recent-articles .blog-author,
-  body.dark-mode .recent-articles .blog-date {
-    color: var(--secondary);
-  }
-  body.dark-mode .recent-articles .article-group {
-    background-color: var(--dark);
-    border: 1px solid;
-  }
-  body.dark-mode .blog-sidebar .feature-h3,
-  body.dark-mode .blog-sidebar .feature-date,
-  body.dark-mode .blog-sidebar .blog-header {
-    color: var(--secondary);
-  }
-  body.dark-mode .blog-sidebar .blog-featured-group {
-    background-color: var(--dark);
-    border: 1px solid var(--secondary);
-  }
-  body.dark-mode .blog-sidebar .blog-header:after {
-    background: var(--secondary);
-  }
-  body.dark-mode .blog-article .blog-h1,
-  body.dark-mode .blog-article .blog-author,
-  body.dark-mode .blog-article .blog-date {
-    color: var(--secondary);
-  }
-  body.dark-mode .blog-article #blog-content h1,
-  body.dark-mode .blog-article #blog-content h2,
-  body.dark-mode .blog-article #blog-content h3,
-  body.dark-mode .blog-article #blog-content h4,
-  body.dark-mode .blog-article #blog-content h5,
-  body.dark-mode .blog-article #blog-content h6 {
-    color: var(--secondary);
-  }
-  body.dark-mode .blog-article #blog-content p,
-  body.dark-mode .blog-article #blog-content li {
-    color: var(--secondary);
-    opacity: 0.8;
-  }
-  body.dark-mode .blog-article #blog-content a {
-    color: var(--secondary);
-  }
-}
 /*-- -------------------------- -->
 <---          Sidebar           -->
 <--- -------------------------- -*/
@@ -793,32 +747,5 @@
   }
   #services-1302 .cs-item:last-of-type {
     border: none;
-  }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #services-1302 .cs-title,
-  body.dark-mode #services-1302 .cs-text {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #services-1302 .cs-text {
-    opacity: 0.8;
-  }
-  body.dark-mode #services-1302 .cs-card-group {
-    background-color: rgba(0, 0, 0, 0.3);
-  }
-  body.dark-mode #services-1302 .cs-item {
-    border-color: rgba(255, 255, 255, 0.1);
-  }
-  body.dark-mode #services-1302 .cs-item:hover {
-    background-color: rgba(0, 0, 0, 0.6);
-    border-color: rgba(0, 0, 0, 0.6);
-  }
-  body.dark-mode #services-1302 .cs-h3,
-  body.dark-mode #services-1302 .cs-item-text {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #services-1302 .cs-item-text {
-    opacity: 0.8;
   }
 }

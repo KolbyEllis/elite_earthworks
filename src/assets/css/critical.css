@@ -111,12 +111,6 @@
     gap: 1rem;
   }
 }
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #hero-1426 .cs-background:before {
-    opacity: 0.72;
-  }
-}
 /*-- -------------------------- -->
 <---          Services          -->
 <--- -------------------------- -*/
@@ -255,11 +249,5 @@
   #services-1354 .cs-item {
     grid-column: span 3;
     margin-top: -10rem;
-  }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode .cs-title {
-    color: var(--bodyTextColorWhite);
   }
 }

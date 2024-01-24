@@ -192,70 +192,6 @@
   }
 }
 /*-- -------------------------- -->
-<---      Dark Mode Toggle      -->
-<--- -------------------------- -*/
-/* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #dark-mode-toggle .cs-sun {
-    transform: translate(-50%, -50%);
-    opacity: 1;
-  }
-  body.dark-mode #dark-mode-toggle .cs-moon {
-    transform: translate(-50%, -150%);
-    opacity: 0;
-    fill: #fff;
-  }
-  #cs-navigation.cs-active #dark-mode-toggle .cs-moon {
-    fill: #fff;
-  }
-  #dark-mode-toggle {
-    display: block;
-    position: absolute;
-    bottom: 0.625rem;
-    right: 4.375rem;
-    width: 3rem;
-    height: 3rem;
-    background: transparent;
-    border: none;
-    overflow: hidden;
-    padding: 0;
-    z-index: 1000;
-  }
-  #dark-mode-toggle img,
-  #dark-mode-toggle svg {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 1.25rem;
-    height: 1.25rem;
-    pointer-events: none;
-  }
-  #dark-mode-toggle .cs-moon {
-    z-index: 2;
-    transition: transform 0.3s, opacity 0.3s;
-  }
-  #dark-mode-toggle .cs-sun {
-    z-index: 1;
-    transform: translate(-50%, 100%);
-    opacity: 0;
-    transition: transform 0.3s, opacity 0.3s;
-  }
-}
-/* Desktop - 1024px */
-@media only screen and (min-width: 64rem) {
-  #dark-mode-toggle {
-    margin: 0;
-    position: relative;
-    transform: none;
-    bottom: auto;
-    right: auto;
-  }
-  #dark-mode-toggle:hover {
-    cursor: pointer;
-  }
-}
-/*-- -------------------------- -->
 <---     Mobile Navigation      -->
 <--- -------------------------- -*/
 /* Mobile - 1023px */
@@ -627,60 +563,6 @@
     font-size: 1em;
   }
 }
-/* Dark Mode */
-@media only screen and (max-width: 63.9375rem) {
-  body.dark-mode #cs-navigation {
-    background-color: var(--dark);
-  }
-  body.dark-mode #cs-navigation.cs-active:after {
-    width: 100%;
-    max-width: 100%;
-    background-color: var(--dark);
-  }
-  body.dark-mode #cs-navigation.cs-active .cs-picture {
-    background-color: var(--accent);
-  }
-  body.dark-mode #cs-navigation .cs-top-bar:before {
-    opacity: 0.5;
-  }
-  body.dark-mode #cs-navigation .cs-picture {
-    background-color: var(--accent);
-  }
-  body.dark-mode #cs-navigation .cs-item:after {
-    opacity: 0.5;
-  }
-  body.dark-mode #cs-navigation .cs-icon {
-    /* if current color is not black, turns icon white */
-    filter: grayscale(1) brightness(1000%);
-  }
-  body.dark-mode #cs-navigation .cs-link {
-    color: var(--secondary);
-  }
-  body.dark-mode #cs-navigation .cs-ul-wrapper {
-    background-color: var(--dark);
-  }
-  body.dark-mode #cs-navigation .cs-ul-wrapper:before {
-    /* dark overlay */
-    content: '';
-    width: 100%;
-    height: 100%;
-    background: #000;
-    opacity: 0.2;
-    position: absolute;
-    display: block;
-    top: 0;
-    left: 0;
-  }
-  body.dark-mode #cs-navigation .cs-li-link {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #cs-navigation .cs-logo {
-    background-color: var(--dark);
-  }
-  body.dark-mode #cs-navigation .cs-toggle {
-    background-color: var(--accent);
-  }
-}
 /*-- -------------------------- -->
 <---     Navigation Dropdown    -->
 <--- -------------------------- -*/
@@ -851,19 +733,6 @@
   }
   #cs-navigation .cs-li-link.cs-drop-link:before {
     display: none;
-  }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #cs-navigation .cs-drop-ul {
-    background-color: var(--dark);
-  }
-  body.dark-mode #cs-navigation .cs-li-link.cs-drop-link:hover {
-    background-color: var(--medium);
-  }
-  body.dark-mode #cs-navigation .cs-drop-icon {
-    /* turns it white */
-    filter: grayscale(1) brightness(1000%);
   }
 }
 /*-- -------------------------- -->
@@ -1082,39 +951,6 @@
     border-radius: 0.5;
   }
 }
-/* Dark Mode */
-@media only screen and (min-width: 64rem) {
-  body.dark-mode #cs-navigation {
-    background-color: var(--dark);
-  }
-  body.dark-mode #cs-navigation .cs-top-bar:before {
-    opacity: 0.5;
-  }
-  body.dark-mode #cs-navigation .cs-logo {
-    background-color: var(--dark);
-  }
-  body.dark-mode #cs-navigation .cs-picture {
-    background-color: var(--accent);
-  }
-  body.dark-mode #cs-navigation .cs-item:after {
-    opacity: 0.5;
-  }
-  body.dark-mode #cs-navigation .cs-icon {
-    /* if current color is not black, turns icon white */
-    filter: grayscale(1) brightness(1000%);
-  }
-  body.dark-mode #cs-navigation .cs-link,
-  body.dark-mode #cs-navigation .cs-header,
-  body.dark-mode #cs-navigation .cs-li-link {
-    color: var(--bodyTextColorWhite);
-  }
-  body.dark-mode #cs-navigation .cs-li-link:before {
-    background-color: var(--primary);
-  }
-  body.dark-mode #cs-navigation .cs-bottom-bar {
-    background-color: var(--dark);
-  }
-}
 /*-- -------------------------- -->
 <---          Banner            -->
 <--- -------------------------- -*/
@@ -1199,12 +1035,6 @@
     width: 100%;
     left: 0;
     transform: none;
-  }
-}
-/* Dark Mode */
-@media only screen and (min-width: 0rem) {
-  body.dark-mode #banner-843 .cs-wave path {
-    fill: var(--dark);
   }
 }
 /*-- -------------------------- -->
@@ -1296,9 +1126,9 @@
     list-style: none;
   }
   #footer-1147 .cs-social-link {
-    width: 2rem;
-    height: 2rem;
-    background-color: var(--backgroundColor);
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--headerColor);
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -1313,10 +1143,10 @@
     opacity: 1;
   }
   #footer-1147 .cs-social-icon {
-    width: 0.75rem;
+    width: 1.1rem;
     height: auto;
     display: block;
-    opacity: 0.5;
+    opacity: 0.8;
   }
   #footer-1147 .cs-copyright {
     font-size: 1rem;
