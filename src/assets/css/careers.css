@@ -1,97 +1,146 @@
 /* PAGE-SPECIFIC STYLES FOR THE REVIEWS PAGE */
 /*-- -------------------------- -->
-<---           Reviews          -->
+<---   Side By Side Reverse     -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #sbsr-599 {
+    position: relative;
+  }
+  #sbsr-599 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #sbsr-599 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: left;
+    width: 100%;
+    max-width: 32.625rem;
+    /* moved section padding to cs-content so the cs-background can be full width */
+    padding: 2rem;
+    /* prevents padding and border from affecting height and width */
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: flex-start;
+  }
+  #sbsr-599 .cs-background {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 16rem;
+    z-index: 1;
+  }
+  #sbsr-599 .cs-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #sbsr-599 {
+    /* 90px - 150px */
+    /* returned section padding to the section container, this Stitch has 1.5X padding top and bottom than the normal Stitch */
+    padding: clamp(5.625rem, 9vw, 9.375rem) 1rem;
+  }
+  #sbsr-599 .cs-container {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  #sbsr-599 .cs-background {
+    width: 50%;
+    height: auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+  }
+  #sbsr-599 .cs-content {
+    width: 45%;
+    padding: 0;
+  }
+}
+/*-- -------------------------- -->
+<---           Bamboo          -->
 <--- -------------------------- -*/
 /* Mobile */
 @media only screen and (min-width: 0em) {
-  #reviews {
-    margin: auto;
-    padding-top: 7.5rem;
-    padding-bottom: 3.125rem;
+  #BambooHR {
+    padding: 2rem;
   }
-  #reviews .container {
-    width: 96%;
-    max-width: 82.5rem;
+  #BambooHR a {
+    text-decoration: none;
+    color: var(--secondary);
+    font-family: montserrat, sans-serif;
+    font-size: clamp(0.5rem, 6.4vw, 1rem);
   }
-  #reviews .review {
-    width: 100%;
-    max-width: 25.625rem;
-    margin: auto;
-    margin-bottom: 6.25rem;
-    padding: 4rem 1.875rem 1.125rem 1.875rem;
-    background: #fff;
-    box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.05);
-    border-radius: 0.3125rem;
-    display: flex;
-    flex-direction: column;
-    position: relative;
+  #BambooHR a:hover {
+    color: var(--primary);
   }
-  #reviews .review:last-of-type {
-    margin-bottom: 0;
+  #BambooHR h2 {
+    font-size: clamp(2rem, 6.4vw, 1rem);
   }
-  #reviews .review .profile {
-    width: 6.1875rem;
-    height: 6.1875rem;
-    margin-bottom: 1rem;
-    margin-left: 0;
-    border-radius: 50%;
-    display: block;
-    position: absolute;
-    top: calc(-51 / 16 * 1rem);
-    left: 1.875rem;
+  #BambooHR #department_18459,
+  #BambooHR #department_18437 {
+    font-size: clamp(0rem, 6.4vw, 1rem);
   }
-  #reviews .review p {
-    line-height: 1.5em;
-    text-align: left;
-    margin-bottom: 1.75rem;
+  #BambooHR .BambooHR-ATS-Location {
+    font-size: clamp(0.5rem, 3.4vw, 1rem);
+    display: none;
   }
-  #reviews .review .star-group {
-    margin-top: auto;
-    padding-top: 1rem;
-    border-top: 1px solid #e7e7e7;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: nowrap;
-  }
-  #reviews .review .star-group .name {
-    font-weight: bold;
-    line-height: 1.5rem;
-    text-align: left;
-    color: #1a1a1a;
-    display: block;
-  }
-  #reviews .review .star-group .desc {
-    font-weight: 400;
-    color: #575757;
-    display: block;
-  }
-  #reviews .review .star-group img {
-    width: 5.6875rem;
-    height: 0.9375rem;
-    margin: 0;
-    display: block;
+  #BambooHR h2,
+  #BambooHR #department_18459,
+  #BambooHR #department_18437,
+  #BambooHR .BambooHR-ATS-Location {
+    color: var(--secondary);
+    font-family: montserrat, sans-serif;
+    font-weight: 700;
   }
 }
 /* Tablet */
 @media only screen and (min-width: 48em) {
-  #reviews {
-    padding-top: 9.375rem;
-    padding-bottom: 3.125rem;
+  #BambooHR {
+    padding: 5rem;
   }
-  #reviews .container {
-    font-size: min(1.4vw, 1em);
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    column-gap: 1.875rem;
+  #BambooHR a {
+    text-decoration: none;
+    color: var(--secondary);
+    font-family: montserrat, sans-serif;
+    font-size: clamp(0.5rem, 6.4vw, 0.8rem);
   }
-  #reviews .review {
-    margin: 0;
-    margin-bottom: 9.375rem;
+  #BambooHR a:hover {
+    color: var(--primary);
   }
-  #reviews .review:last-of-type {
-    margin-bottom: 9.375rem;
+  #BambooHR h2 {
+    font-size: clamp(2rem, 6.4vw, 1rem);
+  }
+  #BambooHR #department_18459,
+  #BambooHR #department_18437 {
+    font-size: clamp(0rem, 6.4vw, 1rem);
+  }
+  #BambooHR .BambooHR-ATS-Location {
+    font-size: clamp(0.5rem, 3.4vw, 0.8rem);
+    display: block;
+  }
+  #BambooHR h2,
+  #BambooHR #department_18459,
+  #BambooHR #department_18437,
+  #BambooHR .BambooHR-ATS-Location {
+    color: var(--secondary);
+    font-family: montserrat, sans-serif;
+    font-weight: 700;
   }
 }
