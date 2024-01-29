@@ -194,6 +194,12 @@
 /*-- -------------------------- -->
 <---     Mobile Navigation      -->
 <--- -------------------------- -*/
+body,
+html {
+  /* reset margin and padding so there's no gap between the nav and the screen edges */
+  margin: 0;
+  padding: 0;
+}
 /* Mobile - 1023px */
 @media only screen and (max-width: 63.9375rem) {
   body.cs-open {
@@ -202,7 +208,7 @@
   #cs-navigation {
     width: 100%;
     padding: 0.75rem 1rem;
-    /* prevents padding from affecting height and width */
+    /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
     background-color: var(--headerBackgroundColor);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
@@ -210,12 +216,12 @@
     z-index: 100;
   }
   #cs-navigation:after {
-    /* on hover red bar */
-    content: '';
+    /* on hover green bar */
+    content: "";
     width: 40%;
     max-width: 9.125rem;
     height: 100%;
-    background: var(--primary);
+    background: var(--headerBackgroundColor);
     opacity: 1;
     position: absolute;
     display: block;
@@ -225,19 +231,20 @@
     transition: width 0.2s, max-width 0.3s, background-color 0.3s;
   }
   #cs-navigation:before {
-    content: '';
-    width: 0%;
-    height: 100vh;
+    /* grey blurrd overlay */
+    content: "";
+    width: 100%;
+    height: 0vh;
     background: rgba(0, 0, 0, 0.6);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     opacity: 0;
     position: absolute;
     display: block;
-    top: 0;
+    top: 100%;
     right: 0;
     z-index: -11;
-    transition: width 0.5s, opacity 0.3s;
+    transition: height 0.5s, opacity 0.3s;
   }
   #cs-navigation.cs-active:after {
     width: 100%;
@@ -245,70 +252,28 @@
     background-color: var(--headerBackgroundColor);
   }
   #cs-navigation.cs-active:before {
-    width: 100%;
+    height: 150vh;
     opacity: 1;
-  }
-  #cs-navigation.cs-active .cs-top-bar {
-    z-index: initial;
-  }
-  #cs-navigation.cs-active .cs-top-bar:before {
-    display: none;
-  }
-  #cs-navigation.cs-active .cs-link {
-    color: var(--secondary);
   }
   #cs-navigation.cs-active .cs-ul-wrapper {
     opacity: 1;
-    transform: scaleX(1);
+    transform: scaleY(1);
     transition-delay: 0.2s;
-  }
-  #cs-navigation.cs-active .cs-li {
-    transform: translateX(0);
-    opacity: 1;
+    background-color: var(--headerBackgroundColor);
     font-weight: 700;
   }
-  #cs-navigation.scroll .cs-top-bar {
-    height: 0;
-    opacity: 0;
-    padding-bottom: 0;
-    overflow: hidden;
-  }
-  #cs-navigation.scroll .cs-top-bar:before {
-    opacity: 0;
-  }
-  #cs-navigation.scroll .cs-toggle {
-    margin-top: 0;
-  }
-  #cs-navigation .cs-top-bar {
-    margin: 0;
-    padding: 0 0 0.75rem 0;
-    position: relative;
-    transition: height 0.3s, padding-bottom 0.3s, opacity 0.3s;
-    z-index: -3;
-  }
-  #cs-navigation .cs-top-bar:before {
-    /* grey line */
-    content: '';
-    width: 100%;
-    height: 1px;
-    background: #EFF1F0;
+  #cs-navigation.cs-active .cs-li {
+    transform: translateY(0);
     opacity: 1;
-    position: absolute;
-    display: block;
-    bottom: 0;
-    right: -1rem;
-    z-index: -2;
-    transition: opacity 0.3s;
   }
   #cs-navigation .cs-logo {
     width: 40%;
     max-width: 9.125rem;
     height: 100%;
     padding: 0.75rem 1rem;
-    /* prevents padding from affecting height and width */
+    /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
     display: flex;
-    background-color: var(--headerBackgroundColor);
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -321,53 +286,12 @@
     height: 100%;
     /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
     object-fit: contain;
-    /* places the image to the left edge of the parent */
-    object-position: left;
-  }
-  #cs-navigation .cs-item {
-    list-style: none;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-  }
-  #cs-navigation .cs-remove {
-    display: none;
-  }
-  #cs-navigation .cs-picture {
-    width: 2rem;
-    height: 2rem;
-    margin-right: 1rem;
-    border-radius: 50%;
-    background-color: #EFF1F0;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.3s;
-  }
-  #cs-navigation .cs-icon {
-    width: 1rem;
-    height: auto;
-    display: block;
-  }
-  #cs-navigation .cs-header {
-    display: none;
-  }
-  #cs-navigation .cs-link {
-    font-size: 0.6875rem;
-    line-height: 1.5em;
-    text-align: inherit;
-    text-decoration: none;
-    margin: 0;
-    color: var(--bodyTextColor);
-    display: block;
-    transition: color 0.3s;
   }
   #cs-navigation .cs-toggle {
     /* 44px - 48px */
     width: clamp(2.75rem, 6vw, 3rem);
     height: clamp(2.75rem, 6vw, 3rem);
-    margin: 0.75rem 0 0 auto;
+    margin: 0 0 0 auto;
     border-radius: 0.25rem;
     background-color: #484848;
     border: none;
@@ -407,7 +331,7 @@
   #cs-navigation .cs-line1 {
     top: 0;
     transform-origin: center;
-    transition: transform 0.5s, top 0.3S, left 0.3S;
+    transition: transform 0.5s, top 0.3s, left 0.3s;
     animation-duration: 0.7s;
     animation-timing-function: ease;
     animation-fill-mode: forwards;
@@ -427,41 +351,38 @@
     transition: bottom 0.3s, opacity 0.3s;
   }
   #cs-navigation .cs-ul-wrapper {
-    height: 100vh;
+    width: 100%;
     opacity: 0;
-    background-color: var(--headerBackgroundColor);
+    background-color: #fff;
     box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
     overflow: hidden;
     position: absolute;
     top: 100%;
-    left: auto;
-    right: 0;
+    left: 0;
     z-index: -1;
-    transform: scaleX(0);
-    transform-origin: top right;
+    transform: scaleY(0);
+    transform-origin: top;
     transition: transform 0.4s, opacity 0.3s;
   }
   #cs-navigation .cs-ul {
     margin: 0;
-    /* 28px - 40px */
-    padding: 3rem clamp(1.75rem, 3vw, 2.5rem) 2rem 4.375rem;
-    width: auto;
-    min-width: 40%;
-    height: 65vh;
-    overflow: hidden;
+    padding: 3rem 0 3rem 0;
+    width: 100%;
+    height: auto;
+    max-height: 65vh;
+    overflow: scroll;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     gap: 1.25rem;
   }
   #cs-navigation .cs-li {
-    text-align: right;
+    text-align: center;
     list-style: none;
-    width: 100%;
     margin-right: 0;
     /* transition from these values */
-    transform: translateX(-2.5rem);
+    transform: translateY(-4.375rem);
     opacity: 0;
     transition: transform 0.6s, opacity 0.9s;
   }
@@ -492,8 +413,19 @@
   #cs-navigation .cs-li:nth-of-type(9) {
     transition-delay: 0.45s;
   }
-  #cs-navigation .cs-li-link,
-  #cs-navigation .cs-li-link-c {
+  #cs-navigation .cs-li:nth-of-type(10) {
+    transition-delay: 0.5s;
+  }
+  #cs-navigation .cs-li:nth-of-type(11) {
+    transition-delay: 0.55s;
+  }
+  #cs-navigation .cs-li:nth-of-type(12) {
+    transition-delay: 0.6s;
+  }
+  #cs-navigation .cs-li:nth-of-type(13) {
+    transition-delay: 0.65s;
+  }
+  #cs-navigation .cs-li-link {
     /* 16px - 24px */
     font-size: clamp(1rem, 2.5vw, 1.5rem);
     line-height: 1.2em;
@@ -503,10 +435,9 @@
     display: inline-block;
     position: relative;
   }
-  #cs-navigation .cs-li-link:before,
-  #cs-navigation .cs-li-link-c:before {
+  #cs-navigation .cs-li-link:before {
     /* active state underline */
-    content: '';
+    content: "";
     width: 100%;
     height: 1px;
     background: currentColor;
@@ -516,51 +447,16 @@
     bottom: -0.125rem;
     left: 0;
   }
-  #cs-navigation .cs-li-link.cs-active:before,
-  #cs-navigation .cs-li-link-c.cs-active:before {
+  #cs-navigation .cs-li-link.cs-active:before {
     display: block;
+  }
+  #cs-navigation .cs-li-link-c {
+    text-decoration: none;
+    color: var(--secondary);
+    font-size: 1.5em;
   }
   #cs-navigation .cs-button-solid {
     display: none;
-  }
-}
-/* Tablet - 650px - 1023px */
-@media only screen and (min-width: 40.625rem) and (max-width: 63.9375rem) {
-  #cs-navigation .cs-logo {
-    background-color: var(--headerBackgroundColor);
-  }
-  #cs-navigation .cs-top-bar {
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
-  }
-  #cs-navigation .cs-item {
-    position: relative;
-  }
-  #cs-navigation .cs-item:nth-of-type(2):after {
-    display: none;
-  }
-  #cs-navigation .cs-item:after {
-    /* divider line */
-    content: '';
-    width: 1px;
-    height: 100%;
-    margin: 0 1rem;
-    background: var(--secondary);
-    opacity: 1;
-    position: relative;
-    display: block;
-  }
-  #cs-navigation .cs-picture {
-    display: flex;
-    background-color: var(--backgroundColor);
-  }
-  #cs-navigation .cs-ul {
-    padding-top: 5rem;
-    gap: 2rem;
-  }
-  #cs-navigation .cs-li-link {
-    font-size: 1em;
   }
 }
 /*-- -------------------------- -->
@@ -568,6 +464,11 @@
 <--- -------------------------- -*/
 /* Mobile - 1023px */
 @media only screen and (max-width: 63.9375rem) {
+  #cs-navigation .cs-li {
+    text-align: center;
+    width: 100%;
+    display: block;
+  }
   #cs-navigation .cs-dropdown {
     position: relative;
     color: var(--bodyTextColorWhite);
@@ -577,8 +478,7 @@
     opacity: 1;
     visibility: visible;
     margin: 0.75rem 0 0 0;
-    padding: 1.5rem;
-    transform: scale(1);
+    padding: 0.75rem 0;
   }
   #cs-navigation .cs-dropdown.cs-active .cs-drop-link {
     opacity: 1;
@@ -599,8 +499,7 @@
     width: 100%;
     height: 0;
     margin: 0;
-    padding: 0 1.5rem 0 1.5rem;
-    box-sizing: border-box;
+    padding: 0;
     background-color: var(--backgroundColor);
     overflow: hidden;
     opacity: 0;
@@ -608,20 +507,18 @@
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
     gap: 0.75rem;
-    transform: scale(0);
-    transform-origin: top right;
-    transition: padding 0.3s, margin 0.3s, height 0.3s, opacity 0.3s, transform 0.3s, visibility 0.3s;
+    transition: padding 0.3s, margin 0.3s, height 0.3s, opacity 0.3s, visibility 0.3s;
   }
   #cs-navigation .cs-drop-li {
     list-style: none;
-    text-align: inherit;
   }
   #cs-navigation .cs-li-link.cs-drop-link {
     /* 14px - 16px */
     font-size: clamp(0.875rem, 2vw, 1.25rem);
-    color: #fff;
+    color: var(--secondary);
+    font-weight: 600;
   }
 }
 /* Desktop - 1024px */
@@ -673,7 +570,7 @@
     height: auto;
     color: var(--bodyTextColor);
     display: block;
-    transform: translateY(-10/16rem);
+    transform: translateY(-0.625rem);
     transition: opacity 0.6s, transform 0.6s;
   }
   #cs-navigation .cs-drop-li:nth-of-type(1) {
@@ -716,13 +613,13 @@
     transition-delay: 0.65s;
   }
   #cs-navigation .cs-li-link.cs-drop-link {
-    font-size: 1rem;
     white-space: nowrap;
+    width: 100%;
+    font-size: 1rem;
     line-height: 1.5em;
     text-decoration: none;
-    width: 100%;
     padding: 0.75rem;
-    /* prevents padding from affecting height and width */
+    /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
     color: var(--bodyTextColor);
     display: block;
@@ -742,31 +639,17 @@
 @media only screen and (min-width: 64rem) {
   #cs-navigation {
     width: 100%;
-    padding: 1rem 1rem 0 1rem;
-    /* prevents padding from affecting height and width */
+    /* 23px - 420px */
+    padding: 0rem 1rem 0rem clamp(14.6875rem, 23vw, 26.25rem);
+    /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
     background-color: var(--headerBackgroundColor);
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     position: fixed;
     z-index: 10000;
-    transition: padding-top 0.3s;
-  }
-  #cs-navigation.scroll {
-    padding-top: 0;
-  }
-  #cs-navigation.scroll .cs-top-bar {
-    height: 0;
-    opacity: 0;
-    padding-bottom: 0;
-    margin-bottom: 0;
-    overflow: hidden;
-    transform: translateY(-50/16rem);
-  }
-  #cs-navigation.scroll .cs-top-bar:before {
-    width: 0;
-  }
-  #cs-navigation.scroll .cs-toggle {
-    margin-top: 0;
   }
   #cs-navigation .cs-toggle {
     display: none;
@@ -775,10 +658,10 @@
     width: 18.4%;
     max-width: 20rem;
     height: 100%;
-    /* 32px - 48px */
-    padding: 1rem clamp(2rem, 3vw, 3rem);
+    /* 32px - 64px */
+    padding: 1rem clamp(2rem, 4vw, 4rem);
     background-color: var(--headerBackgroundColor);
-    /* prevents padding from affecting height and width */
+    /* prevents padding and border from affecting height and width */
     box-sizing: border-box;
     display: flex;
     justify-content: center;
@@ -794,109 +677,7 @@
     /* ensures the image never overflows the container. It stays contained within it's width and height and expands to fill it then stops once it reaches an edge */
     object-fit: contain;
   }
-  #cs-navigation .cs-top-bar {
-    width: 100%;
-    margin: 0;
-    padding: 0 0 1rem 0;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    position: relative;
-    transition: height 0.3s, opacity 0.3s, padding-bottom 0.3s, margin-bottom 0.3s, transform 0.3s;
-  }
-  #cs-navigation .cs-top-bar:before {
-    /* grey line */
-    content: '';
-    width: 100%;
-    height: 1px;
-    background: var(--secondary);
-    opacity: 1;
-    position: absolute;
-    display: block;
-    bottom: 0;
-    right: -1rem;
-    z-index: -2;
-    transition: width 0.3s;
-  }
-  #cs-navigation .cs-item {
-    list-style: none;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    position: relative;
-  }
-  #cs-navigation .cs-item:last-of-type:after {
-    display: none;
-  }
-  #cs-navigation .cs-item:hover .cs-picture {
-    transform: scale(1.1);
-  }
-  #cs-navigation .cs-item:after {
-    /* divider line */
-    content: '';
-    width: 1px;
-    height: 3rem;
-    /* 24px - 44px */
-    margin: 0 clamp(1.5rem, 5vw, 2.75rem);
-    background: var(--secondary);
-    opacity: 1;
-    position: relative;
-    display: block;
-  }
-  #cs-navigation .cs-picture {
-    width: 3rem;
-    height: 3rem;
-    margin-right: 1rem;
-    border-radius: 50%;
-    background-color: var(--backgroundColor);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: transform 0.3s;
-  }
-  #cs-navigation .cs-icon {
-    width: 1.5rem;
-    height: auto;
-    display: block;
-  }
-  #cs-navigation .cs-header {
-    font-size: 1rem;
-    font-weight: 700;
-    margin: 0;
-    color: var(--secondary);
-    display: block;
-  }
-  #cs-navigation .cs-link {
-    font-size: 0.875rem;
-    line-height: 1.5em;
-    text-align: inherit;
-    text-decoration: none;
-    margin: 0;
-    color: var(--secondary);
-    display: block;
-    transition: color 0.3s;
-  }
-  #cs-navigation .cs-link:hover {
-    text-decoration: underline;
-  }
-  #cs-navigation .cs-li-link-c {
-    display: none;
-  }
-  #cs-navigation .cs-bottom-bar {
-    width: 100%;
-    /* 235px - 420px */
-    padding: 0 0 0 clamp(14.6875rem, 23vw, 26.25rem);
-    /* prevents padding from affecting height and width */
-    box-sizing: border-box;
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--headerBackgroundColor);
-    align-items: center;
-    gap: 32/16rem;
-  }
   #cs-navigation .cs-ul {
-    width: 100%;
     margin: 0;
     padding: 0;
     display: flex;
@@ -908,18 +689,17 @@
   #cs-navigation .cs-li {
     list-style: none;
     padding: 2rem 0;
-    font-weight: 700;
     /* prevent flexbox from squishing it */
     flex: none;
   }
   #cs-navigation .cs-li:last-of-type {
     /* pushes the button to the far roght */
     margin-left: auto;
-    padding: 0;
   }
   #cs-navigation .cs-li-link {
     /* 14px - 16px */
     font-size: clamp(0.875rem, 1vw, 1rem);
+    font-weight: 700;
     line-height: 1.5em;
     text-decoration: none;
     margin: 0;
@@ -935,7 +715,7 @@
   }
   #cs-navigation .cs-li-link:before {
     /* active state underline */
-    content: '';
+    content: "";
     width: 0%;
     height: 2px;
     background: var(--primary);
@@ -946,9 +726,11 @@
     left: 0;
     transition: width 0.3s;
   }
+  #cs-navigation .cs-li-link-c {
+    display: none;
+  }
   #cs-navigation .cs-nav-button {
-    margin-left: auto;
-    border-radius: 0.5;
+    margin: 0 0 0 auto;
   }
 }
 /*-- -------------------------- -->
