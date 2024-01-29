@@ -640,7 +640,7 @@
         .cs-picture {
             font-size:~"min(1.1vw, 1em)";
             width: (1290/16em);
-            height: (710/24em);
+            height: (710/16em);
 
             img {
                 position: absolute;
@@ -685,4 +685,25 @@
         }
     }
 }
-                                
+                            
+@media only screen and (min-width: 40rem) {
+    #video-1492 {
+        .cs-picture {
+            font-size:~"min(1.1vw, 1em)";
+            width: (1290/20em);
+            height: (710/20em);
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+                z-index: -1;
+                transition: transform 0.7s;
+            }
+        }
+    }
+}
+        
