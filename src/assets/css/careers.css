@@ -95,16 +95,16 @@
     top: 0;
     left: 0;
     z-index: -1;
-    margin: 5rem 2rem;
   }
   #map-720 .cs-background img {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
-    width: 100%;
+    width: 75%;
+    margin-left: 18rem;
+    margin-top: 5rem;
     /* Makes img tag act as a background image */
-    object-fit: fill;
   }
 }
 /*-- -------------------------- -->
