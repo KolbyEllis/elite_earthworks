@@ -89,7 +89,7 @@
 @media only screen and (min-width: 0rem) {
   #quote-561 {
     background-color: transparent;
-    background: url('/assets/images/quote.jpg') center center / cover no-repeat fixed;
+    background: url('/assets/images/quote.webp') center center / cover no-repeat fixed;
     position: relative;
   }
   #quote-561 .cs-content {
