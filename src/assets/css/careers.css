@@ -45,8 +45,6 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
-    border-top-left-radius: 1rem;
-    border-bottom-left-radius: 1rem;
   }
 }
 /* Tablet - 768px */
@@ -67,6 +65,10 @@
     top: 0;
     bottom: 0;
     left: 50%;
+  }
+  #sbsr-599 .cs-background img {
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
   }
   #sbsr-599 .cs-content {
     width: 45%;
@@ -221,7 +223,7 @@
   }
   #map-720 .cs-background {
     width: 100%;
-    height: 100%;
+    height: 80%;
     display: block;
     position: absolute;
     top: 0;
@@ -232,7 +234,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    height: 75%;
+    height: 100%;
     width: auto;
     padding: 1rem;
     /* Makes img tag act as a background image */
@@ -273,7 +275,8 @@
 /* Mobile */
 @media only screen and (min-width: 0em) {
   #BambooHR {
-    padding: 2rem;
+    padding: 0rem 2rem;
+    margin-top: -5rem;
   }
   #BambooHR a {
     text-decoration: none;
@@ -307,7 +310,8 @@
 /* Tablet */
 @media only screen and (min-width: 48em) {
   #BambooHR {
-    padding: 5rem;
+    padding: 2rem 5rem;
+    margin-top: 0rem;
   }
   #BambooHR a {
     text-decoration: none;
