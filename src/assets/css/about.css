@@ -217,6 +217,7 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+    cursor: default;
   }
   #services-1302 .cs-h3 {
     /* 20px - 25px */
