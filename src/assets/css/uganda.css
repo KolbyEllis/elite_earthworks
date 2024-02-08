@@ -89,6 +89,7 @@
     font-size: inherit;
     line-height: inherit;
     text-decoration: underline;
+    font-weight: bold;
     color: var(--secondary);
   }
   #content-page-849 ol,
