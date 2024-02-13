@@ -5,3 +5,15 @@
 [[plugins]]
   # Installs the Lighthouse Build Plugin for all deploy contexts
   package = "@netlify/plugin-lighthouse"
+
+  [[headers]]
+  # Cache policy for .mp4 files
+  for = "/*.mp4"
+    [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  # Cache policy for .svg files
+  for = "/*.svg"
+    [headers.values]
+    Cache-Control = "public, max-age=604800" 
