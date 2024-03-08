@@ -8,6 +8,7 @@ author: Mark Schwab
 date: 2024-03-07T23:31:30.182Z
 tags:
   - post
+  - featured
 image: /assets/images/blog/website-photo.png
 imageAlt: Website Screenshot
 pageTitle: Blog
