@@ -6,7 +6,8 @@ author: Mark Schwab
 date: 2024-03-29T14:51
 tags:
   - post
-image: /assets/images/blog/picture1.png
+  - featured
+image: /assets/images/blog/fontana-fusd.webp
 imageAlt: Fontana FUSD
 pageTitle: Blog
 ---
