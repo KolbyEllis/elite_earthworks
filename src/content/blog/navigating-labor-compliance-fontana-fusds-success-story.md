@@ -3,7 +3,7 @@ title: "Navigating Labor Compliance: Fontana FUSD's Success Story"
 description: "Elite has learned to adapt and pivot in order to meet the
   ever-changing labor compliance requirements of Los Angeles. "
 author: Mark Schwab
-date: 2024-03-29T14:51
+date: 2024-03-29T17:01
 tags:
   - post
   - featured
