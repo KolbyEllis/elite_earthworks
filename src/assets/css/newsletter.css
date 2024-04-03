@@ -1,95 +1,63 @@
 /*-- -------------------------- -->
-<---            CTA             -->
+<---         Subscribe          -->
 <--- -------------------------- -*/
 /* Mobile - 360px */
 @media only screen and (min-width: 0rem) {
-  #cta {
-    background-color: var(--primary);
-    box-sizing: border-box;
+  #subscribe {
+    background-color: #30312D;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
     position: relative;
+    z-index: 1;
+    margin-top: 5rem;
   }
-  #cta .cs-container {
+  #subscribe .cs-container {
     width: 100%;
-    max-width: 80rem;
+    /* changes to 1312px at tablet */
+    max-width: 34.375rem;
     margin: auto;
+    padding: var(--sectionPadding);
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     align-items: center;
     /* 48px - 64px */
     gap: clamp(3rem, 6vw, 4rem);
   }
-  #cta .cs-content {
+  #subscribe .cs-content {
     /* set text align to left if content needs to be left aligned */
-    text-align: center;
+    text-align: left;
     width: 100%;
     max-width: 39.375rem;
-    padding: var(--sectionPadding);
-    /* prevents padding and border from affecting height and width */
-    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     /* centers content horizontally, set to flex-start to left align */
-    align-items: center;
-    z-index: 20;
-  }
-  #cta .cs-topper,
-  #cta .cs-text {
-    color: var(--headerColor);
-  }
-  #cta .cs-text {
-    margin-bottom: 1rem;
-  }
-  #cta .cs-text:last-of-type {
-    margin-bottom: 2rem;
-  }
-  #cta .cs-button-solid {
-    font-size: 1rem;
-    /* 46px - 56px */
-    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-    text-decoration: none;
-    font-weight: 700;
-    text-align: center;
-    margin: 0;
-    color: #fff;
-    min-width: 9.375rem;
-    padding: 0 1.5rem;
-    background-color: #1a1a1a;
-    display: inline-block;
+    align-items: flex-start;
     position: relative;
     z-index: 1;
-    /* prevents padding from adding to the width */
-    box-sizing: border-box;
-    transition: color 0.3s;
   }
-  #cta .cs-button-solid:before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 0%;
-    background: #fff;
-    opacity: 1;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    transition: width 0.3s;
+  #subscribe .cs-title {
+    max-width: 20ch;
+    color: var(--bodyTextColorWhite);
   }
-  #cta .cs-button-solid:hover {
-    color: #1a1a1a;
+  #subscribe .cs-text {
+    margin-bottom: 1rem;
+    color: var(--bodyTextColorWhite);
+    opacity: 0.8;
   }
-  #cta .cs-button-solid:hover:before {
-    width: 100%;
+  #subscribe .cs-text:last-of-type {
+    margin-bottom: 2rem;
   }
-  #cta .cs-form {
+  #subscribe .cs-form {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* 16px - 20px */
-    gap: clamp(1rem, 2.3vw, 1.25rem);
+    gap: 1rem;
   }
-  #cta .cs-input {
+  #subscribe .cs-input {
     font-size: 1rem;
     width: 100%;
     height: clamp(2.875rem, 5.5vw, 3.5rem);
@@ -101,127 +69,124 @@
     box-sizing: border-box;
     display: block;
   }
-  #cta .cs-input::placeholder {
+  #subscribe .cs-input::placeholder {
     color: #767676;
   }
-  #cta .cs-submit {
-    width: 100%;
-    padding: 0 2rem;
-    border: none;
-    /* prevents flexbox from squishing it */
-    flex: none;
-  }
-  #cta .cs-background {
-    width: 100%;
-    height: 23.75rem;
-    overflow: hidden;
-    display: block;
+  #subscribe .cs-button-solid {
+    font-size: 1rem;
+    /* 46px - 56px */
+    line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+    text-decoration: none;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    color: #fff;
+    min-width: 9.375rem;
+    padding: 0 1.5rem;
+    background-color: var(--primary);
+    display: inline-block;
     position: relative;
+    z-index: 1;
+    /* prevents padding from adding to the width */
+    box-sizing: border-box;
   }
-  #cta .cs-background:before {
-    /* yellow slants */
+  #subscribe .cs-button-solid:before {
     content: "";
-    width: 21.875rem;
-    height: 300%;
-    background: var(--primary);
-    opacity: 1;
     position: absolute;
-    display: block;
-    top: -12.5rem;
-    left: -11.875rem;
-    z-index: 10;
-    transform: rotate(-30deg);
-    outline: 3.125rem solid rgba(237, 167, 8, 0.4);
+    height: 100%;
+    width: 0%;
+    background: #000;
+    opacity: 1;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: width 0.3s;
   }
-  #cta .cs-background img {
+  #subscribe .cs-button-solid:hover:before {
+    width: 100%;
+  }
+  #subscribe .cs-submit {
+    width: 100%;
+    border: none;
+    color: var(--bodyTextColorWhite);
+  }
+  #subscribe .cs-submit:hover {
+    cursor: pointer;
+  }
+  #subscribe .cs-background {
+    width: 100%;
+    height: 100vw;
+    max-height: 25rem;
+    display: block;
+    order: -1;
+    position: relative;
+    z-index: 2;
+  }
+  #subscribe .cs-background img {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
     width: 100%;
-    /* Makes img tag act as a background image */
     object-fit: cover;
   }
-  #cta .cs-floater {
-    width: 70%;
-    max-width: 40.75rem;
+  #subscribe .cs-floater {
+    /* 296px - 450px */
+    width: clamp(18.5rem, 35vw, 28.125rem);
     height: auto;
-    opacity: 0.2;
+    opacity: 0.04;
     position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
+    right: -8.0625rem;
+    top: -9.375rem;
+    z-index: -1;
   }
 }
 /* Tablet - 768px */
 @media only screen and (min-width: 48rem) {
-  #cta {
-    /* moved padding back to the section container */
-    padding: var(--sectionPadding);
-  }
-  #cta .cs-container {
-    align-items: center;
+  #subscribe {
     flex-direction: row;
-    justify-content: flex-start;
+    align-items: stretch;
   }
-  #cta .cs-content {
-    text-align: left;
-    width: 57%;
-    padding: 0;
-    align-items: flex-start;
-    position: relative;
-    z-index: initial;
+  #subscribe .cs-container {
+    max-width: 82rem;
+    align-items: flex-end;
   }
-  #cta .cs-content:before {
-    /* yellow slants, adjust the rotate degree and right value if you add more content to account for the extra height of the cs-content container */
-    content: "";
-    width: 21.875rem;
-    height: 400%;
-    background: var(--primary);
-    opacity: 1;
-    position: absolute;
-    display: block;
-    top: -31.25rem;
-    right: 1.875rem;
-    z-index: 1;
-    transform: rotate(-30deg);
-    outline: 3.125rem solid rgba(237, 167, 8, 0.4);
+  #subscribe .cs-content {
+    width: 45vw;
+    max-width: 39.375rem;
   }
-  #cta .cs-topper,
-  #cta .cs-title,
-  #cta .cs-text {
-    position: relative;
-    z-index: 20;
-  }
-  #cta .cs-form {
-    flex-direction: row;
-    justify-content: flex-start;
-    position: relative;
-    z-index: 20;
-  }
-  #cta .cs-input {
-    width: 100%;
-  }
-  #cta .cs-submit {
-    width: auto;
-  }
-  #cta .cs-background {
-    width: 60%;
+  #subscribe .cs-background {
+    width: 50%;
+    max-height: 100%;
     height: 100%;
     position: absolute;
-    right: 0;
-    top: 0;
+    right: 50%;
   }
-  #cta .cs-background:before {
-    /* moved it to the cs-content for easier positioning */
-    display: none;
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #subscribe .cs-content {
+    /* remove the positioning so the cs-floater is now absolutely positioned to the nearest parent that has a declared position relative, which is the section parent */
+    position: initial;
+  }
+  #subscribe .cs-form {
+    flex-direction: row;
+  }
+  #subscribe .cs-button-solid {
+    width: auto;
+  }
+  #subscribe .cs-floater {
+    top: 50%;
+    right: -12.5rem;
+    transform: translateY(-50%);
   }
 }
 /* Large Desktop - 1300px */
 @media only screen and (min-width: 81.25rem) {
-  #cta {
-    min-height: 37.5rem;
-    display: flex;
-    align-items: center;
+  #subscribe .cs-content {
+    width: 100%;
+  }
+  #subscribe .cs-background {
+    margin-right: 7.375rem;
   }
 }
