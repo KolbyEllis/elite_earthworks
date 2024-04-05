@@ -2,6 +2,7 @@
 const pluginEleventyNavigation = require("@11ty/eleventy-navigation");
 const pluginMinifier = require("@sherby/eleventy-plugin-files-minifier");
 const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 const configCssExtension = require("./src/config/cssExtension");
 const configSitemap = require("./src/config/sitemap");
@@ -30,6 +31,9 @@ module.exports = function (eleventyConfig) {
     if (configServer.isProduction) {
         eleventyConfig.addPlugin(pluginMinifier);
     }
+
+	eleventyConfig.addPlugin(pluginRss);
+
     // END PLUGINS
 
     // SERVER - Set how the eleventy dev server is run, using the options from https://www.11ty.dev/docs/dev-server/
