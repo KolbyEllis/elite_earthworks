@@ -3,12 +3,13 @@
   "permalink": "feed.xml",
   "eleventyExcludeFromCollections": true,
   "metadata": {
-    title: '{{ title }}'
-    description: '{{ description }}'
+    "title": "My Blog about Boats",
+    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
     "language": "en",
     "url": "https://elite-earthworks.com/",
     "author": {
-      "name": "{{ author }}",
+      "name": "Boaty McBoatFace",
+      "email": "me@example.com"
     }
   }
 }
@@ -19,9 +20,9 @@
     <title>{{ metadata.title }}</title>
     <link>{{ metadata.url }}</link>
     <atom:link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" type="application/rss+xml" />
-    <description>{{ metadata.description }}</description>
+    <description>{{ metadata.subtitle }}</description>
     <language>{{ metadata.language }}</language>
-    {%- for post in collections.posts | reverse %}
+    {%- for post in blog.posts | reverse %}
     {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
     <item>
       <title>{{ post.data.title }}</title>

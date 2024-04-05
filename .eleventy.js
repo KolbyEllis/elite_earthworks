@@ -33,6 +33,7 @@ module.exports = function (eleventyConfig) {
     }
 
 	eleventyConfig.addPlugin(pluginRss);
+    
 
     // END PLUGINS
 
@@ -64,6 +65,10 @@ module.exports = function (eleventyConfig) {
     // Gets the current year, which can be outputted with {% year %}. Used for the footer copyright. Updates with every build.
     eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
     // END SHORTCODES
+
+    eleventyConfig.addCollection("posts", function(collection) {
+        return collection.getFilteredByTag("post");
+    });
 
     return {
         dir: {
