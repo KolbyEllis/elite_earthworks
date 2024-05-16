@@ -12,7 +12,7 @@ author: Mark Schwab
 date: 2024-05-16T14:54:00.000Z
 tags:
   - BrandIdentity
-image: /assets/images/blog/20240418_134918435_ios.jpg
+image: /assets/images/blog/elite-vehicle.png
 imageAlt: Pickup
 pageTitle: Blog
 ---
