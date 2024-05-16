@@ -30,4 +30,4 @@ Moreover, vehicle wraps offer added protection for our fleet, helping to preserv
 
 **Conclusion:**
 
-At Elite Earthworks, every detail matters, and our newly wrapped pick-up trucks are no exception. From their striking appearance to their practical benefits, our trucks embody our values and commitment to excellence in everything we do. As they hit the road, we're excited to see the impact they'll have in elevating our brand and reinforcing our reputation as a premier company in the earthwork and grading industry.
+At Elite Earthworks, every detail matters, and our newly wrapped pick-up trucks are no exception. From their striking appearance to their practical benefits, our trucks embody our values and commitment to excellence in everything we do. As they hit the road, we're excited to see the impact they'll have in elevating our brand and reinforcing our reputation as a premier company in the earthwork and grading industry. Keep your eyes peeled for our new Elite pickup trucks!
