@@ -1,12 +1,17 @@
 ---json
 {
-preloadCSS: '/assets/css/blog.css'
-eleventyComputed:
-    title: '{{ title }}'
-    description: '{{ description }}'
-    preloadImg: '{{ image }}'
-    permalink: '/blog/{{ title | slug }}/index.html'
-    pageTitle: 'Blog'
+  "permalink": "feed.xml",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "My Blog about Boats",
+    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
+    "language": "en",
+    "url": "https://elite-earthworks.com/",
+    "author": {
+      "name": "Boaty McBoatFace",
+      "email": "me@example.com"
+    }
+  }
 }
 ---
 <?xml version="1.0" encoding="utf-8"?>
@@ -17,7 +22,7 @@ eleventyComputed:
     <atom:link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" type="application/rss+xml" />
     <description>{{ metadata.subtitle }}</description>
     <language>{{ metadata.language }}</language>
-    {%- for post in post.html | reverse %}
+    {%- for post in blog.posts | reverse %}
     {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
     <item>
       <title>{{ post.data.title }}</title>
