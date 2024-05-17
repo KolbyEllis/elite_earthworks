@@ -22,7 +22,7 @@
     <atom:link href="{{ permalink | absoluteUrl(metadata.url) }}" rel="self" type="application/rss+xml" />
     <description>{{ metadata.subtitle }}</description>
     <language>{{ metadata.language }}</language>
-    {%- for post in blog.posts | reverse %}
+    {%- for post in post.html | reverse %}
     {%- set absolutePostUrl = post.url | absoluteUrl(metadata.url) %}
     <item>
       <title>{{ post.data.title }}</title>
