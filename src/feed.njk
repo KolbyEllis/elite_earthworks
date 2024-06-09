@@ -15,7 +15,7 @@
 }
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="{{ metadata.url }}" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xml:base="{{ metadata.url }}" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/">
     <channel>
         <title>{{ metadata.title }}</title>
         <link>{{ metadata.url }}</link>
@@ -31,7 +31,7 @@
                 <pubDate>{{ post.date | dateToRfc822 }}</pubDate>
                 <dc:creator>{{ metadata.author.name }}</dc:creator>
                 <guid>{{ absolutePostUrl }}</guid>
-                <media:content url="{{ post.image }}" medium="image" width="708" height="400"/>
+                <media:content url="{{ post.data.image }}" medium="image" width="708" height="400"></media:content>
             </item>
         {%- endfor %}
     </channel>
