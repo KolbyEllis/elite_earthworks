@@ -7,7 +7,8 @@ description: Welcome to Elite Earthworks and Engineering, Southern California's
   solutions.
 author: Kolby
 date: 2024-06-25T11:37:00.000Z
-tags: []
+tags:
+  - post
 image: /assets/images/blog/site-grading.jpg
 imageAlt: test
 pageTitle: Blog
