@@ -276,7 +276,6 @@
 @media only screen and (min-width: 0em) {
   #BambooHR {
     padding: 0rem 2rem;
-    margin-top: -5rem;
   }
   #BambooHR a {
     text-decoration: none;
@@ -311,7 +310,7 @@
 @media only screen and (min-width: 48em) {
   #BambooHR {
     padding: 2rem 5rem;
-    margin-top: 8rem;
+    margin-top: 10rem;
   }
   #BambooHR a {
     text-decoration: none;
