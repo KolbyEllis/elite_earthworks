@@ -992,3 +992,354 @@ html {
     padding-bottom: 5rem;
   }
 }
+/*-- -------------------------- -->
+<---           Video            -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #video-1492 {
+    padding: var(--sectionPadding);
+    padding-bottom: 2rem;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  #video-1492 .cs-container {
+    width: 100%;
+    max-width: 80.625rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 48px - 64px */
+    gap: clamp(3rem, 6vw, 4rem);
+  }
+  #video-1492 .cs-content {
+    /* set text align to left if content needs to be left aligned */
+    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* centers content horizontally, set to flex-start to left align */
+    align-items: center;
+    padding-bottom: 2rem;
+  }
+  #video-1492 .cs-big-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+  #video-1492 .cs-big-link:hover .cs-picture img {
+    transform: scale(1.1);
+  }
+  #video-1492 .cs-picture {
+    font-size: min(1.1vw, 1em);
+    width: 80.625em;
+    height: 44.375em;
+  }
+  #video-1492 .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    z-index: -1;
+    transition: transform 0.7s;
+  }
+  #video-1492 .cs-icon-wrapper {
+    /* 56px - 120px */
+    width: clamp(3.5rem, 11vw, 7.5rem);
+    height: clamp(3.5rem, 11vw, 7.5rem);
+    border-radius: 50%;
+    opacity: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  #video-1492 .cs-icon-wrapper:hover {
+    transform: scale(1.1);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+  }
+  #video-1492 .cs-link-icon {
+    /* 16px - 24px */
+    width: clamp(1rem, 2vw, 1.5rem);
+    height: auto;
+  }
+}
+@media only screen and (min-width: 40rem) {
+  #video-1492 .cs-picture {
+    font-size: min(1.1vw, 1em);
+    width: 64.5em;
+    height: 35.5em;
+  }
+  #video-1492 .cs-picture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    object-fit: contain;
+    z-index: -1;
+    transition: transform 0.7s;
+  }
+}
+/*-- -------------------------- -->
+<---            CTA             -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #cta-403 {
+    padding: var(--sectionPadding);
+    position: relative;
+  }
+  #cta-403 .cs-background {
+    width: 100%;
+    height: 100%;
+    background-blend-mode: multiply;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  #cta-403 .cs-background:before {
+    /* background color overlay */
+    content: "";
+    position: absolute;
+    display: block;
+    height: 100%;
+    width: 100%;
+    background: #1a1a1a;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  #cta-403 .cs-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0% 30%;
+  }
+  #cta-403 .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    /* Remove space when text/title are hidden */
+    min-height: 10rem;
+    /* Optional: Force consistent height */
+  }
+  #cta-403 .cs-content {
+    text-align: center;
+    width: 100%;
+    max-width: 32.3125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #cta-403 .cs-title,
+  #cta-403 .cs-text {
+    color: var(--bodyTextColorWhite);
+  }
+  #cta-403 .cs-text {
+    margin-bottom: 1rem;
+  }
+  #cta-403 .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #cta-403 .cs-background {
+    overflow: hidden;
+  }
+  #cta-403 .cs-background:before {
+    width: 40%;
+    opacity: 1;
+    display: block;
+  }
+  #cta-403 .cs-background:after {
+    content: "";
+    width: 31.25rem;
+    height: 93.75rem;
+    margin-right: -3.125rem;
+    background: linear-gradient(to right, #1a1a1a 0%, #1a1a1a 57%, rgba(26, 26, 26, 0) 100%);
+    opacity: 1;
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 50%;
+    transform: rotate(10deg) translateY(-50%);
+  }
+  #cta-403 .cs-background img {
+    width: 60%;
+    object-position: right;
+    left: auto;
+    right: 0;
+  }
+  #cta-403 .cs-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #cta-403 .cs-content {
+    text-align: left;
+    align-items: flex-start;
+    width: 45%;
+  }
+  #cta-403 .cs-text,
+  #cta-403 .cs-title {
+    margin-left: 0;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #cta-403 {
+    margin-top: 5rem;
+  }
+}
+/*-- -------------------------- -->
+<---            CTA careers            -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #cta-careers {
+    padding: var(--sectionPadding);
+    position: relative;
+  }
+  #cta-careers .cs-background {
+    width: 100%;
+    height: 100%;
+    background-blend-mode: multiply;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  #cta-careers .cs-background:before {
+    /* background color overlay */
+    content: "";
+    position: absolute;
+    display: none;
+    height: 100%;
+    width: 100%;
+    background: #1a1a1a;
+    opacity: 0.8;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  #cta-careers .cs-background img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: 0% 30%;
+  }
+  #cta-careers .cs-container {
+    width: 100%;
+    max-width: 80rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    /* Remove space when text/title are hidden */
+    min-height: 10rem;
+    /* Optional: Force consistent height */
+  }
+  #cta-careers .cs-content {
+    text-align: center;
+    width: 100%;
+    max-width: 32.3125rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #cta-careers .cs-title,
+  #cta-careers .cs-text {
+    color: var(--bodyTextColorWhite);
+  }
+  #cta-careers .cs-text {
+    margin-bottom: 1rem;
+  }
+  #cta-careers .cs-text:last-of-type {
+    margin-bottom: 2rem;
+  }
+}
+/* Hide title and text on mobile only */
+@media only screen and (max-width: 47.9375rem) {
+  #cta-careers .cs-title,
+  #cta-careers .cs-text {
+    display: none;
+  }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #cta-careers .cs-background {
+    overflow: hidden;
+  }
+  #cta-careers .cs-background:before {
+    width: 40%;
+    opacity: 1;
+    display: block;
+  }
+  #cta-careers .cs-background:after {
+    content: "";
+    width: 31.25rem;
+    height: 93.75rem;
+    margin-right: -3.125rem;
+    background: linear-gradient(to right, #1a1a1a 0%, #1a1a1a 57%, rgba(26, 26, 26, 0) 100%);
+    opacity: 1;
+    position: absolute;
+    display: block;
+    top: 50%;
+    right: 50%;
+    transform: rotate(10deg) translateY(-50%);
+  }
+  #cta-careers .cs-background img {
+    width: 60%;
+    object-position: right;
+    left: auto;
+    right: 0;
+  }
+  #cta-careers .cs-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #cta-careers .cs-content {
+    text-align: left;
+    align-items: flex-start;
+    width: 45%;
+  }
+  #cta-careers .cs-text,
+  #cta-careers .cs-title {
+    margin-left: 0;
+  }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+  #cta-careers {
+    margin-top: 5rem;
+  }
+}

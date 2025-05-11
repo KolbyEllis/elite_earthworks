@@ -1,0 +1,139 @@
+---
+title: 'Mining Services'
+description: 'Elite Earthworks specializes in contract mining solutions in Southern California, offering MSHA-certified services including excavation, hauling, site development, and complete mining operations.'
+preloadImg: '/assets/images/mining3.webp'
+permalink: 'mining/'
+pageTitle: Mining
+eleventyNavigation:
+    key: Mining
+    order: 600
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/mining.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Mining </h1>
+            <p class="cs-text">
+                Partner with Elite Earthworks for your mining projects and experience unparalleled service and expertise. Contact us today to learn more about how we can assist you in achieving your mining objectives.
+
+
+            </p>
+            <div class="cs-button-group">
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Image -->
+    <picture class="cs-background">
+        <source media="(max-width: 600px)" srcset="/assets/images/mining3-m.webp">
+        <source media="(min-width: 601px)" srcset="/assets/images/mining3.webp">
+        <img loading="lazy" decoding="async" src="/assets/images/mining3.webp" alt="Elite Earthworks mining in southern california" width="1920" height="1200" aria-hidden="true">
+    </picture>
+
+    <img class="cs-graphic" src="/assets/svgs/mud-splatter.svg" alt="graphic" height="161" width="1920" loading="lazy" decoding="async" >
+</section>
+
+<!-- ============================================ -->
+<!--                 Content Page                 -->
+<!-- ============================================ -->
+
+
+
+<section id="content-page-849">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1>Your Trusted Partner for Contract Mining Solutions in Southern California</h1>
+            <h2>Elite's Passion For Mining Projects</h2>
+            <p>
+                In the fast-evolving mining industry, flexibility and efficiency are crucial to staying ahead. At Elite Earthworks & Engineering, we specialize in providing comprehensive contract mining solutions that allow you to scale operations seamlessly while maintaining productivity and cost-effectiveness.
+
+            </p>
+
+            <p>
+                Elite Earthworks & Engineering is proudly <b>MSHA Part 46 Certified</b>, ensuring our team meets the highest standards in mining safety and compliance. Our certification reflects a strong commitment to protecting our workers and maintaining a safe, efficient jobsite across all mining operations.
+            </p>
+            
+            <p>
+                Our team of industry experts manages every aspect of the mining process, ensuring smooth operations from start to finish. We maintain a cutting-edge equipment fleet, deploy skilled personnel, and oversee efficient ore transportation, allowing you to focus on your core business while we handle the complexities of mining operations.
+
+            </p>
+            <p>
+                With a commitment to safety, sustainability, and operational excellence, Elite Earthworks & Engineering is the partner you can rely on for all your contract mining needs. Whether you're expanding production or optimizing existing operations, we provide the expertise and resources necessary to keep your project on track and running efficiently.
+            </p>
+            <p>
+                Partner with Elite Earthworks & Engineering today and experience the difference of a dedicated contract mining team that prioritizes your success.
+
+            </p>
+        </div>
+        
+        <div class="cs-image-group">
+
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="/assets/images/mining2.webp">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="/assets/images/mining2.webp">
+                <img decoding="async" src="/assets/images/mining2.webp" alt="Elite Earthworks mining" width="542" height="520" aria-hidden="true">
+            </picture>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================ -->
+<!--                    Form                      -->
+<!-- ============================================ -->
+
+<section id="cs-contact-486">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h2 class="cs-title">Get in Touch With Us</h2>
+            <p class="cs-text">
+                Have questions about our fire control services? We're here to help. Contact us today to discuss your project, request a consultation, or learn more about how we can assist you. You can reach us by phone, email, or by filling out the form below
+            </p>
+            <span class="cs-heading">Estimating@elite-earthworks.com </span>
+            <span class="cs-heading">(951) 245 2220</span>
+        </div>
+        <!--Form-->
+        <form id="cs-form-486" name="Mining Form" method="post" netlify>
+            <h3 class="cs-h3">Schedule Consultation</h3>
+            <label class="cs-label">
+                Name
+                <input class="cs-input" required type="text" id="name-486" name="name" placeholder="Name">
+            </label>
+            <label class="cs-label">
+                Phone
+                <input class="cs-input" required type="text" id="phone-486" name="phone" placeholder="Phone">
+            </label>
+            <label class="cs-label">
+                Email
+                <input class="cs-input" required type="text" id="email-486" name="email" placeholder="Email">
+            </label>
+            <label class="cs-label">
+                How Did You Find Us?
+                <input class="cs-input" type="text" id="find-486" name="find-us" placeholder="How did you find us?">
+            </label>
+            <label class="cs-label">
+                Tell Us About Your Project
+                <input class="cs-input" type="text" id="find-486" name="find-us" placeholder="Tell Us About Your Project">
+            </label>
+            <button class="cs-button-solid cs-submit" type="submit">Book a Consult</button>
+            
+        </form>
+    </div>
+</section>
+
+{% include 'components/cta2.html' %}                 
+                                                                
+{% endblock %}

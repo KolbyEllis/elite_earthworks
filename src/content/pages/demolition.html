@@ -1,7 +1,7 @@
 ---
 title: 'Demolition'
 description: 'Elite Earthworks: Setting the Standard for Demolition Excellence in California'
-preloadImg: '/assets/images/banner-photo.webp'
+preloadImg: '/assets/images/demolition1.webp'
 permalink: 'demolition/'
 pageTitle: Demolition
 ---
@@ -13,7 +13,33 @@ pageTitle: Demolition
 {% endblock %}
 
 {% block body %}
-{% include 'components/interior-banner.html' %}
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Demolition </h1>
+            <p class="cs-text">
+                Elite Earthworks specializes in clean, safe, and responsible demolition across Southern California. Our expert team ensures each project clears the way for something better—efficiently and sustainably.
+            </p>
+            <div class="cs-button-group">
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Image -->
+    <picture class="cs-background">
+        <source media="(max-width: 600px)" srcset="/assets/images/demolition1-m.webp">
+        <source media="(min-width: 601px)" srcset="/assets/images/demolition1.webp">
+        <img loading="lazy" decoding="async" src="/assets/images/demolition1.webp" alt="Elite Earthworks demolition" width="1920" height="1200" aria-hidden="true">
+    </picture>
+
+    <img class="cs-graphic" src="/assets/svgs/mud-splatter.svg" alt="graphic" height="161" width="1920" loading="lazy" decoding="async" >
+</section>
+
 
 <!-- ============================================ -->
 <!--                 Content Page                 -->
@@ -111,32 +137,6 @@ pageTitle: Demolition
     </div>
 </section>
 
-<!-- ============================================ -->
-<!--                   Video                      -->
-<!-- ============================================ -->
+{% include 'components/cta2.html' %}
 
-<section id="video-1314">
-    <section id="video-1492">
-        <div class="cs-content">
-            <h2 class="cs-title">Have A Project But Need A Professional?</h2>
-            <a href="/contact" class="cs-button-solid">Contact Us For A Free Quote</a>
-        </div>
-            <div class="cs-container">
-            <a href="https://www.youtube.com/watch?v=Xnk-IpT3nQA" class="cs-big-link" alt="Elite Earthworks promo video" aria-label="Elite Earthworks promo video">
-                <!--Background Image-->
-                <picture class="cs-picture">
-                    <source media="(min-width: 1024px)" srcset="/assets/images/elite-thumbnail.webp">
-                    <source media="(min-width: 601px)" srcset="/assets/images/elite-thumbnail.webp">
-                    <source media="(max-width: 600px)" srcset="/assets/images/elite-thumbnail-m.webp">
-                    <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/elite-thumbnail.webp" alt="Elite Earthworks promo video" aria-label="Elite Earthworks promo video" width="1290" height="710">
-                </picture>
-                <!--Play Icon-->
-                <picture class="cs-icon-wrapper">
-                    <img class="cs-link-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/play-white.svg" alt="play icon" aria-label="play icon" width="36" height="36">
-                </picture>
-            </a>
-        </div>
-    </section>
-
-</section>
 {% endblock %}

@@ -13,7 +13,33 @@ pageTitle: Uganda
 {% endblock %}
 
 {% block body %}
-{% include 'components/interior-banner-uganda.html' %}
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Uganda </h1>
+            <p class="cs-text">
+                For over a decade, Elite Earthworks has partnered with SOS Ministries to help build lasting infrastructure in rural Uganda—from schools and churches to housing and community centers. Together, we’re using our  expertise to make a meaningful impact, one project at a time.
+            </p>
+            <div class="cs-button-group">
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Image -->
+    <picture class="cs-background">
+        <source media="(max-width: 600px)" srcset="/assets/images/uganda-banner-m.webp">
+        <source media="(min-width: 601px)" srcset="/assets/images/uganda-banner.webp">
+        <img loading="lazy" decoding="async" src="/assets/images/uganda-banner.webp" alt="Elite Earthworks in Uguanda" width="1920" height="1200" aria-hidden="true">
+    </picture>
+
+    <img class="cs-graphic" src="/assets/svgs/mud-splatter.svg" alt="graphic" height="161" width="1920" loading="lazy" decoding="async" >
+</section>
+
 
 <!-- ============================================ -->
 <!--                 Content Page                 -->
@@ -68,7 +94,7 @@ pageTitle: Uganda
     <div class="cs-container">
         <div class="cs-content">
             <h2 class="cs-title">Want To Get Involved?</h2>
-            <a href="https://www.sosministries.com/" alt="Elite Earthworks SOS Ministries" class="cs-button-solid" width="40" height="35" loading="lazy" decoding="async">Visit SOS Ministries To Learn More</a>
+            <a href="https://www.sosministries.com/" target="_blank" alt="Elite Earthworks SOS Ministries" class="cs-button-solid" width="40" height="35" loading="lazy" decoding="async">Visit SOS Ministries To Learn More</a>
         </div>
         <div class="cs-gallery">
             <div class="cs-flex">
@@ -77,7 +103,7 @@ pageTitle: Uganda
                     <source media="(max-width: 600px)" srcset="/assets/images/portfolio/uganda1-m.webp">
                     <!--Tablet and above Image-->
                     <source media="(min-width: 601px)" srcset="/assets/images/portfolio/uganda1.webp">
-                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/uganda1.webp" alt="Elite Earthworks rough grading" width="360" height="420">
+                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/uganda1.webp" alt="Elite Earthworks grading" width="360" height="420">
                 </picture>
                 <picture class="cs-picture cs-picture2">
                     <!--Mobile Image-->

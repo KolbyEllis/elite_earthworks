@@ -1,12 +1,12 @@
 ---
 title: 'Blog'
 description: 'Discover Insights and Updates on Our Blog'
-preloadImg: '/assets/images/banner-photo.webp'
+preloadImg: '/assets/images/blog.webp'
 permalink: 'blog/'
 pageTitle: Blog
 eleventyNavigation:
     key: Blog
-    order: 500
+    order: 600
 ---
 
 {% extends "layouts/base.html" %}
@@ -16,7 +16,32 @@ eleventyNavigation:
 {% endblock %}
 
 {% block body %}
-{% include 'components/interior-banner.html' %}
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Blog </h1>
+            <p class="cs-text">
+                Discover the latest insights, updates, and stories from our team. Whether you're looking for industry news, helpful tips, or company highlights, you'll find it all right here.            </p>
+            <div class="cs-button-group">
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Image -->
+    <picture class="cs-background">
+        <source media="(max-width: 600px)" srcset="/assets/images/blog-m.webp">
+        <source media="(min-width: 601px)" srcset="/assets/images/blog.webp">
+        <img loading="lazy" decoding="async" src="/assets/images/blog.webp" alt="Elite Earthworks blog" width="1920" height="1200" aria-hidden="true">
+    </picture>
+
+    <img class="cs-graphic" src="/assets/svgs/mud-splatter.svg" alt="graphic" height="161" width="1920" loading="lazy" decoding="async" >
+</section>
+
 
     <!-- ============================================ -->
     <!--              Main Blog Content               -->

@@ -1,7 +1,7 @@
 ---
 title: 'Contact'
-description: 'Reach Out to Elite Earthworks: Your Partner in Grading Excellence'
-preloadImg: '/assets/images/banner-photo.webp'
+description: 'Reach Out to Elite Earthworks: Your Partner in Excellence'
+preloadImg: '/assets/images/contact.webp'
 permalink: 'contact/'
 pageTitle: 'Contact'
 ---
@@ -13,85 +13,92 @@ pageTitle: 'Contact'
 {% endblock %}
 
 {% block body %}
-{% include 'components/interior-banner.html' %}
-                          
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Contact Us</h1>
+            <p class="cs-text">
+                We are thrilled to hear from you and learn about your project needs. Please fill the form out and our team of experts will get back to you within 24 hours.
+
+            </p>
+            <div class="cs-button-group">
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Image -->
+    <picture class="cs-background">
+        <source media="(max-width: 600px)" srcset="/assets/images/contact-m.webp">
+        <source media="(min-width: 601px)" srcset="/assets/images/contact.webp">
+        <img loading="lazy" decoding="async" src="/assets/images/contact.webp" alt="Elite Earthworks contact us" width="1920" height="1200" aria-hidden="true">
+    </picture>
+
+    <img class="cs-graphic" src="/assets/svgs/mud-splatter.svg" alt="graphic" height="161" width="1920" loading="lazy" decoding="async" >
+</section>
+
 <!-- ============================================ -->
 <!--                   Contact                    -->
 <!-- ============================================ -->
 
-<section id="ContactForm-327">
+<section id="contact-2320">
     <div class="cs-container">
         <div class="cs-content">
-            <h2 class="cs-title">Get in Touch</h2>
-            <p class="cs-text">
-                We are thrilled to hear from you and learn about your project needs. Please fill the form out and our team of experts will get back to you within 24 hours. 
-            </p>
             <!--Form-->
             <form class="cs-form" id="cs-form-323-327" name="Contact Form" method="post" netlify action="/success">
                 <label class="cs-label">
                     Name
-                    <input class="cs-input" required type="text" id="name-323-327" name="name" placeholder="Name">
+                    <input class="cs-input" required type="text" name="name" placeholder="Name">
                 </label>
                 <label class="cs-label cs-email">
                     Email
-                    <input class="cs-input" type="text" id="email-323-327" name="email" placeholder="Email">
+                    <input class="cs-input" required type="email" name="email" placeholder="Email">
                 </label>
                 <label class="cs-label cs-phone">
                     Phone
-                    <input class="cs-input" type="text" id="phone-323-327" name="phone" placeholder="Phone">
+                    <input class="cs-input" required type="tel" name="phone" placeholder="Phone">
                 </label>
                 <label class="cs-label">
                     Message
-                    <textarea class="cs-input cs-textarea" required name="Message" id="message-323-327" placeholder="Write message..."></textarea>
+                    <textarea class="cs-input cs-textarea" required name="Message" placeholder="Write message..."></textarea>
                 </label>
-                <button class="cs-button-solid" type="submit">Make an Appointment</button>
+                <button class="cs-button-solid cs-submit" type="submit">Send Message</button>
             </form>
         </div>
         <!--Map Image, pin is made in the Figma then export as one image-->
-        <picture class="cs-map">
-            <source media="(max-width: 600px)" srcset="/assets/images/contact-us-m.webp">
-            <source media="(min-width: 601px)" srcset="/assets/images/contact-us.webp">
-            <img decoding="async" src="/assets/images/contact-us.webp" alt="Elite Earthworks contact us" width="610" height="425" aria-hidden="true">
-        </picture>
+        <div class="cs-map">
+            <div class="cs-iframe-wrapper">
+                <iframe width="600" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" id="gmap_canvas" src="https://maps.google.com/maps?width=600&amp;height=450&amp;hl=en&amp;q=41571%20Date%20St,%20Murrieta%20california+(Elite%20Earthworks%20And%20Engineering)&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe> <a href='https://www.krankenversicherungsvergleich.at/'>Krankenversicherung Rechner</a> <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=a1bdb759d80097ae4b9cbb47291ff80e6379cf3b'></script>            
+            </div>
+            <div class="cs-box">
+                <img class="cs-icon" decoding="async" loading="lazy" src="/assets/svgs/cmap-icon.png" alt="icon" width="40" height="40" aria-hidden="true">
+                <div class="cs-flex">
+                    <span class="cs-header">Location</span>
+                    <span class="cs-address">41571 Date St, Murrieta, CA 92562
+                    </span>
+                </div>
+            </div>
+        </div>
     </div>
-</section>
-
-<!-- ============================================ -->
-<!--                Contact Strip                 -->
-<!-- ============================================ -->
-
-<!-- No headers, so no section tag -->
-<div id="ContactStrip-327">
-    <ul class="cs-stat-group">
-        <li class="cs-item">
-            <picture class="cs-picture">
-                <img class="cs-icon" src="https://csimg.nyc3.digitaloceanspaces.com/Contact-Page/phone-grey.svg" alt="Elite Earthworks phone number" width="35" height="40" loading="lazy" decoding="async" aria-hidden="true">
-            </picture>
-            <div class="cs-flex-group">
-                <span class="cs-header">Phone</span>
-                <a href="tel:555-456-7899" class="cs-link">(951) 245 2220</a>
-            </div>
-        </li>
-        <li class="cs-item">
-            <picture class="cs-picture">
-                <img class="cs-icon" src="https://csimg.nyc3.digitaloceanspaces.com/Contact-Page/pin-grey.svg" alt="Elite Earthworks address" width="40" height="35" loading="lazy" decoding="async" aria-hidden="true">
-            </picture>
-            <div class="cs-flex-group">
-                <span class="cs-header">Address</span>
-                <a href="" class="cs-link">41571 Date St, <br> Murrieta, CA 92562</a>
-            </div>
-        </li>
-        <li class="cs-item">
-            <picture class="cs-picture">
-                <img class="cs-icon" src="https://csimg.nyc3.digitaloceanspaces.com/Contact-Page/clock-grey.svg" alt="Elite Earthworks hours of operation" width="40" height="40" loading="lazy" decoding="async" aria-hidden="true">
-            </picture>
-            <div class="cs-flex-group">
-                <span class="cs-header">Open Hours</span>
-                <span class="cs-hours">Monday To Friday</span>
-                <span class="cs-hours">9:00 AM - 5:00 PM</span>
-            </div>
-        </li>
-    </ul>
-</div>
+    <div class="cs-container2">
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="/assets/images/contact-banner-m.webp">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)" srcset="/assets/images/contact-banner.webp">
+            <img loading="lazy" decoding="async" src="/assets/images/contact-banner.webp" alt="Elite Earthworks contact details" width="1280" height="243">
+        </picture>
+        <div class="cs-hours">
+            <div class="cs-topper">Working Hours</div>
+            <span class="cs-hours-info">Monday To Friday 9:00 AM - 5:00 PM </span> </br>
+            <div class="cs-topper">Phone</div>
+            <span class="cs-hours-info">(951)-245-2220 </span>
+        </div>
+    </div>
+</section>                              
                   
 {% endblock %}

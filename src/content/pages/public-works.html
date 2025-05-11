@@ -1,7 +1,7 @@
 ---
 title: 'Public Works'
 description: "Elevate Your Community with Elite Earthworks Public Works Initiatives in Southern California"
-preloadImg: '/assets/images/banner-photo.webp'
+preloadImg: '/assets/images/public-works1.webp'
 permalink: 'public-works/'
 pageTitle: Public Works
 ---
@@ -13,7 +13,32 @@ pageTitle: Public Works
 {% endblock %}
 
 {% block body %}
-{% include 'components/interior-banner.html' %}
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Public Works </h1>
+            <p class="cs-text">
+                From schools to military projects, Elite Earthworks brings precision, care, and craftsmanship to every public works project. We help build the foundations that uplift our local communities.
+            </p>
+            <div class="cs-button-group">
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Image -->
+    <picture class="cs-background">
+        <source media="(max-width: 600px)" srcset="/assets/images/public-works1-m.webp">
+        <source media="(min-width: 601px)" srcset="/assets/images/public-works1.webp">
+        <img loading="lazy" decoding="async" src="/assets/images/public-works1.webp" alt="Elite Earthworks public works in southern california" width="1920" height="1200" aria-hidden="true">
+    </picture>
+
+    <img class="cs-graphic" src="/assets/svgs/mud-splatter.svg" alt="graphic" height="161" width="1920" loading="lazy" decoding="async" >
+</section>
 
 <!-- ============================================ -->
 <!--                 Content Page                 -->
@@ -36,10 +61,9 @@ pageTitle: Public Works
             <h3>What is Public Works?</h3>
             <p>
                 Public works are all about the big and small projects funded by public money
-                that make our communities better places to live. They're the backbone of our daily lives,
-                involving everything from military base infrastrucures and churches, to setting up parks and schools, not
-                to mention keeping our utilities running smoothly. These projects are crucial because they
-                lay down the infrastructure that allows our society to flourish.
+                that make our communities better places to live. They're the backbone of our daily lives and 
+                involve everything from military base infrastrucures and jails, to setting up parks and schools. 
+                These projects are crucial because they lay down the infrastructure that allows our society to flourish.
             </p>
             <h3>Keeping Certified Payroll Straighforward</h3>
             <p>
@@ -84,26 +108,29 @@ pageTitle: Public Works
         <div class="cs-image-group">
             <picture class="cs-picture">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/public-works-2.webp">
+                <source media="(max-width: 600px)" srcset="/assets/images/public-works2.webp">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/public-works-2.webp">
-                <img decoding="async" src="/assets/images/public-works-2.webp" alt="Elite Earthworks Public Works in southern California" width="542" height="520" aria-hidden="true">
+                <source media="(min-width: 601px)" srcset="/assets/images/public-works2.webp">
+                <img decoding="async" src="/assets/images/public-works2.webp" alt="Elite Earthworks park in southern California" width="542" height="520" aria-hidden="true">
             </picture>
             <picture class="cs-picture">
                 <!--Mobile Image-->
-                <source media="(max-width: 600px)" srcset="/assets/images/public-works-3.webp">
+                <source media="(max-width: 600px)" srcset="/assets/images/public-works3.webp">
                 <!--Tablet and above Image-->
-                <source media="(min-width: 601px)" srcset="/assets/images/public-works-3.webp">
-                <img decoding="async" src="/assets/images/public-works-3.webp" alt="Elite Earthworks Public Works in southern California" width="542" height="520" aria-hidden="true">
+                <source media="(min-width: 601px)" srcset="/assets/images/public-works3.webp">
+                <img decoding="async" src="/assets/images/public-works3.webp" alt="Elite Earthworks playground in southern California" width="542" height="520" aria-hidden="true">
             </picture>
         </div>
     </div>
 </section>
 
+{% include 'components/cta2.html' %}
+
+
 <!-- ============================================ -->
 <!--                   Video                      -->
 <!-- ============================================ -->
-
+<!--
 <section id="video-1314">
     <section id="video-1492">
         <div class="cs-content">
@@ -111,21 +138,21 @@ pageTitle: Public Works
             <a href="/contact" class="cs-button-solid">Contact Us For A Free Quote</a>
         </div>
             <div class="cs-container">
-            <a href="https://www.youtube.com/watch?v=Xnk-IpT3nQA" class="cs-big-link" alt="Elite Earthworks promo video" aria-label="Elite Earthworks promo video">
+            <a href="https://www.youtube.com/watch?v=Xnk-IpT3nQA" class="cs-big-link" alt="Elite Earthworks promo video" aria-label="Elite Earthworks promo video">-->
                 <!--Background Image-->
-                <picture class="cs-picture">
+               <!-- <picture class="cs-picture">
                     <source media="(min-width: 1024px)" srcset="/assets/images/elite-thumbnail.webp">
                     <source media="(min-width: 601px)" srcset="/assets/images/elite-thumbnail.webp">
                     <source media="(max-width: 600px)" srcset="/assets/images/elite-thumbnail-m.webp">
                     <img aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/elite-thumbnail.webp" alt="Elite Earthworks promo video" aria-label="Elite Earthworks promo video" width="1290" height="710">
-                </picture>
+                </picture>-->
                 <!--Play Icon-->
-                <picture class="cs-icon-wrapper">
+               <!--  <picture class="cs-icon-wrapper">
                     <img class="cs-link-icon" aria-hidden="true" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/play-white.svg" alt="play icon" aria-label="play icon" width="36" height="36">
                 </picture>
             </a>
-        </div>
-    </section>
+        </div>-->
+  <!--    </section>-->
 
-</section>
+
 {% endblock %}

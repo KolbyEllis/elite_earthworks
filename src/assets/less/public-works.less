@@ -1,3 +1,91 @@
+@media only screen and (min-width: 0rem) {
+    #hero {
+        padding: clamp(6rem, 10vw, 10rem) (16/16rem);
+        overflow: hidden;
+        position: relative;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: (24/16rem);
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+            max-width: (600/16rem);
+        }
+
+
+
+        .cs-title,
+        .cs-text {
+            color: var(--bodyTextColorWhite);
+        }
+
+        .cs-text {
+            margin-bottom: (16/16rem);
+        }
+
+        .cs-button-group {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: (8/16rem);
+        }
+
+        .cs-graphic {
+            width: 100%;
+            min-width: (1280/16rem);
+            height: auto;
+            object-fit: cover;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            z-index: 0;
+            transform: translateX(-50%);
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -2;
+
+            &:before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: #000;
+                opacity: 0.7;
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: 1;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    }
+}
+
 /*-- -------------------------- -->
 <---        Content Page        -->
 <--- -------------------------- -*/
@@ -57,6 +145,7 @@
         font-size: 2rem;
         margin-top: 2rem;
         color: var(--secondary);
+        display: none;
     }
     #content-page-849 h3 {
         font-size: 1.5rem;
@@ -171,12 +260,14 @@
     }
   }
 
-/*-- -------------------------- -->
+
+
+  /*-- -------------------------- -->
 <---           Video            -->
 <--- -------------------------- -*/
 
 /* Mobile - 360px */
-@media only screen and (min-width: 0rem) {
+/*@media only screen and (min-width: 0rem) {
     #video-1492 {
         padding: var(--sectionPadding);
         padding-bottom: 2rem;
@@ -190,19 +281,19 @@
             margin: auto;
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: center;*/
             /* 48px - 64px */
-            gap: clamp(3rem, 6vw, 4rem);
-        }
+        /*    gap: clamp(3rem, 6vw, 4rem);
+        }*/
 
-        .cs-content {
+       /* .cs-content {
             /* set text align to left if content needs to be left aligned */
-            text-align: center;
+         /*   text-align: center;
             width: 100%;
             display: flex;
-            flex-direction: column;
+            flex-direction: column;*/
             /* centers content horizontally, set to flex-start to left align */
-            align-items: center;
+        /*    align-items: center;
             padding-bottom: 2rem;
         }
 
@@ -239,9 +330,9 @@
             }
         }
 
-        .cs-icon-wrapper {
+        .cs-icon-wrapper {*/
             /* 56px - 120px */
-            width: clamp(3.5rem, 11vw, 7.5rem);
+      /*      width: clamp(3.5rem, 11vw, 7.5rem);
             height: clamp(3.5rem, 11vw, 7.5rem);
             border-radius: 50%;
             opacity: 1;
@@ -263,9 +354,9 @@
             }
         }
 
-        .cs-link-icon {
+        .cs-link-icon {*/
             /* 16px - 24px */
-            width: clamp(1rem, 2vw, 1.5rem);
+       /*     width: clamp(1rem, 2vw, 1.5rem);
             height: auto;
         }
     }
@@ -292,4 +383,4 @@
             }
         }
     }
-}
+}*/

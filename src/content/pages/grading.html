@@ -1,0 +1,103 @@
+---
+title: 'Grading Services'
+description: "Elite Earthworks: Expert Grading Services in Southern California"
+preloadImg: '/assets/images/elite-grading.webp'
+permalink: 'grading/'
+pageTitle: Grading
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/grading.css">
+{% endblock %}
+
+{% block body %}
+
+<!-- ============================================ -->
+<!--                    Hero                      -->
+<!-- ============================================ -->
+
+<section id="hero">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1 class="cs-title">Grading</h1>
+            <p class="cs-text">
+                Elite Earthworks is your trusted partner for grading services. Based in Southern California, we provide expert land shaping solutions tailored to your project’s specific needs.      
+                  </p>
+            </p>
+            <div class="cs-button-group">
+            </div>
+        </div>
+    </div>
+
+    <!-- Background Image -->
+    <picture class="cs-background">
+        <source media="(max-width: 600px)" srcset="/assets/images/elite-grading-m.webp">
+        <source media="(min-width: 601px)" srcset="/assets/images/elite-grading.webp">
+        <img loading="lazy" decoding="async" src="/assets/images/elite-grading.webp" alt="Elite Earthworks grading" width="1920" height="1200" aria-hidden="true">
+    </picture>
+
+    <img class="cs-graphic" src="/assets/svgs/mud-splatter.svg" alt="graphic" height="161" width="1920" loading="lazy" decoding="async" >
+</section>
+
+
+<!-- ============================================ -->
+<!--                 Content Page                 -->
+<!-- ============================================ -->
+
+
+
+<section id="content-page-849">
+    <div class="cs-container">
+        <div class="cs-content">
+            <h1>Top Grading Companies in Southern California</h1>
+            <h2>Rough Grading: Laying the Foundation</h2>
+            <p>
+                Rough grading is the first step in preparing a construction site. At Elite Earthworks, we use advanced machinery such as bulldozers and scrapers to shape the land effectively. This process ensures a stable base for future structures, roads, and landscaping projects.           
+            </p>
+                <p>
+                    By carefully managing elevation and water runoff, our rough grading techniques minimize the risk of erosion and flooding, setting the groundwork for successful project completion.
+                </p>    
+            <h2>Precise Grading: The Final Touch</h2>
+            <p>
+                Precise grading is a critical step that follows rough grading. This stage involves fine-tuning slopes, height, and shape to meet the exact specifications of the project. We utilize state-of-the-art surveying and laser equipment to ensure that every grading project meets stringent accuracy requirements.
+                
+            </p>
+            <p>
+                This phase is essential for drainage management, landscape aesthetics, and overall project durability. At Elite Earthworks, our expertise in precise grading ensures that construction sites are perfectly leveled and ready for development.
+                <ul>
+                    <li>Commitment to excellence and precision</li>
+                    <li>Use of cutting-edge technology and equipment</li>
+                    <li>Environmentally responsible grading techniques</li>
+                    <li>Unwavering focus on client satisfaction</li>
+                </ul>
+            </p>
+
+            <p>
+                From large-scale infrastructure projects to detailed grading work, our team ensures that every site is prepared for long-term success. Choose Elite Earthworks for reliability, efficiency, and superior results.
+            </p>
+        </div>
+        <div class="cs-image-group">
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="/assets/images/precise-grading-2.webp">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="/assets/images/precise-grading-2.webp">
+                <img decoding="async" src="/assets/images/precise-grading-2.webp" alt="Elite Earthworks precise grading in southern California" width="542" height="520" aria-hidden="true">
+            </picture>
+            <picture class="cs-picture">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="/assets/images/rough-grading-3.webp">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="/assets/images/rough-grading-3.webp">
+                <img decoding="async" src="/assets/images/rough-grading-3.webp" alt="Elite Earthworks rough grading in southern California" width="542" height="520" aria-hidden="true">
+            </picture>
+
+        </div>
+    </div>
+</section>
+
+{% include 'components/cta2.html' %}
+
+{% endblock %}

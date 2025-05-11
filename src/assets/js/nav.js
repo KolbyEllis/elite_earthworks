@@ -1,94 +1,113 @@
-// FAQ functionality
+// Function to initialize event listeners for video interactions
+function initializeVideoInteractions() {
+    const videoWrappers = document.querySelectorAll('#hero-2154 .cs-video-wrapper');
+    const playButtons = document.querySelectorAll('#hero-2154 .cs-play');
+    const video = document.querySelector('#hero-2154 video');
+
+    videoWrappers.forEach(wrapper => {
+        wrapper.addEventListener('click', () => {
+            playButtons.forEach(button => button.classList.toggle('cs-hide'));
+            video.paused ? video.play() : video.pause();
+        });
+    });
+
+    if (video) {
+        video.addEventListener('click', () => {
+            video.paused ? video.play() : video.pause();
+        });
+    }
+}
+initializeVideoInteractions();
+
+// FAQ toggling logic
 const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
-for (const item of faqItems) {
-    const onClick = () => {
-        item.classList.toggle('active');
-    };
-    item.addEventListener('click', onClick);
-}
+faqItems.forEach(item => {
+    const button = item.querySelector('.cs-button');
+    if (button) {
+        button.addEventListener('click', (e) => {
+            e.stopPropagation();
+            item.classList.toggle('active');
+        });
+    }
+});
 
+// FAQFilter class definition
 class FAQFilter {
-    filtersSelector = '.cs-option';
-    FAQselector = '.cs-faq-group';
-    activeClass = 'cs-active';
-    hiddenClass = 'cs-hidden';
-
     constructor() {
-        const $filters = document.querySelectorAll(this.filtersSelector);
-        this.$activeFilter = $filters[0];
-        this.$images = document.querySelectorAll(this.FAQselector);
+        this.filtersSelector = '.cs-option';
+        this.FAQselector = '.cs-faq-group';
+        this.activeClass = 'cs-active';
+        this.hiddenClass = 'cs-hidden';
 
-        this.$activeFilter.classList.add(this.activeClass);
+        const filters = document.querySelectorAll(this.filtersSelector);
+        this.activeFilter = filters[0];
+        this.faqGroups = document.querySelectorAll(this.FAQselector);
 
-        for (const $filter of $filters) {
-            $filter.addEventListener('click', () => this.onClick($filter));
+        if (this.activeFilter) {
+            this.activeFilter.classList.add(this.activeClass);
         }
+
+        filters.forEach(filter => {
+            filter.addEventListener('click', () => this.onClick(filter));
+        });
     }
 
-    onClick($filter) {
-        this.filter($filter.dataset.filter);
+    onClick(filter) {
+        this.closeAllOpenFAQs(); // Close all active FAQ items
+        this.filterContent(filter.dataset.filter);
 
-        const { activeClass } = this;
-
-        this.$activeFilter.classList.remove(activeClass);
-        $filter.classList.add(activeClass);
-
-        this.$activeFilter = $filter;
+        if (this.activeFilter) {
+            this.activeFilter.classList.remove(this.activeClass);
+        }
+        filter.classList.add(this.activeClass);
+        this.activeFilter = filter;
     }
 
-    filter(filter) {
+    filterContent(filter) {
         const showAll = filter === 'all';
-        const { hiddenClass } = this;
+        this.faqGroups.forEach(group => {
+            const show = showAll || group.dataset.category === filter;
+            group.classList.toggle(this.hiddenClass, !show);
+        });
+    }
 
-        for (const $image of this.$images) {
-            const show = showAll || $image.dataset.category === filter;
-            $image.classList.toggle(hiddenClass, !show);
-        }
+    closeAllOpenFAQs() {
+        document.querySelectorAll('.cs-faq-item.active').forEach(item => {
+            item.classList.remove('active');
+        });
     }
 }
-
 new FAQFilter();
 
 // Mobile navigation functionality
-var CSbody = document.querySelector('body');
-const CSnavbarMenu = document.querySelector('#cs-navigation');
-const CShamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
+const body = document.querySelector('body');
+const navbarMenu = document.querySelector('#cs-navigation');
+const hamburgerMenu = document.querySelector('#cs-navigation .cs-toggle');
 
-CShamburgerMenu.addEventListener('click', function () {
-    CShamburgerMenu.classList.toggle('cs-active');
-    CSnavbarMenu.classList.toggle('cs-active');
-    CSbody.classList.toggle('cs-open');
-    // Run the function to check the aria-expanded value
-    ariaExpanded();
+hamburgerMenu.addEventListener('click', () => {
+    hamburgerMenu.classList.toggle('cs-active');
+    navbarMenu.classList.toggle('cs-active');
+    body.classList.toggle('cs-open');
+    toggleAriaExpanded();
 });
 
-// Checks the value of aria-expanded on the #cs-expanded element and toggles it
-function ariaExpanded() {
-    const csUL = document.querySelector('#cs-expanded');
-    const csExpanded = csUL.getAttribute('aria-expanded');
-
-    if (csExpanded === 'false') {
-        csUL.setAttribute('aria-expanded', 'true');
-    } else {
-        csUL.setAttribute('aria-expanded', 'false');
-    }
+function toggleAriaExpanded() {
+    const expandedElement = document.querySelector('#cs-expanded');
+    const isExpanded = expandedElement.getAttribute('aria-expanded') === 'true';
+    expandedElement.setAttribute('aria-expanded', !isExpanded);
 }
 
-// Mobile navigation dropdown toggle
-const dropDowns = Array.from(document.querySelectorAll('#cs-navigation .cs-dropdown'));
-for (const item of dropDowns) {
-    const onClick = () => {
-        item.classList.toggle('cs-active');
-    };
-    item.addEventListener('click', onClick);
-}
+// Mobile nav dropdown toggle
+const dropdowns = document.querySelectorAll('#cs-navigation .cs-dropdown');
+dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('click', () => {
+        dropdown.classList.toggle('cs-active');
+    });
+});
 
-// Add .scroll class to #cs-navigation after scrolling down 100px
+// Scroll header effect
 document.addEventListener('scroll', () => {
-    const scroll = document.documentElement.scrollTop;
-    if (scroll >= 100) {
-        document.querySelector('#cs-navigation').classList.add('scroll');
-    } else {
-        document.querySelector('#cs-navigation').classList.remove('scroll');
-    }
+    const scrollTop = document.documentElement.scrollTop;
+    const navigation = document.querySelector('#cs-navigation');
+    navigation.classList.toggle('scroll', scrollTop >= 100);
 });
