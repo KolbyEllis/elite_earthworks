@@ -1,0 +1,324 @@
+/*-- -------------------------- -->
+<---        Edgepilot Jobs      -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #embedding-career-jobs {
+        width: 100%;
+        padding: 0 1rem;
+        margin: 2rem auto;
+        box-sizing: border-box;
+        /* Hide until content is loaded to prevent broken look */
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s ease-in, visibility 0.3s ease-in;
+        
+        /* Show once content is loaded - this class should be added by JS or when content exists */
+        &:not(:empty),
+        &.loaded {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /* Add "Open Positions" heading */
+        &::before {
+            content: "Open Positions";
+            display: block;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            font-weight: 700;
+            color: var(--bodyTextColorWhite);
+            font-family: var(--headerFont);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Search container styling */
+        .em-career-job-search {
+            align-items: center;
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+
+            input {
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 0.5rem;
+                color: var(--bodyTextColorWhite);
+                font-size: 0.875rem;
+                height: 2.75rem;
+                max-width: 100%;
+                padding: 0.5rem 1rem;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.1);
+                transition: border-color 0.15s, background-color 0.15s;
+
+                &::placeholder {
+                    color: rgba(255, 255, 255, 0.6);
+                }
+
+                &:focus {
+                    border-color: var(--primary);
+                    outline: 0;
+                    background-color: rgba(255, 255, 255, 0.15);
+                }
+            }
+
+            select {
+                background: rgba(255, 255, 255, 0.1);
+                border: 1px solid rgba(255, 255, 255, 0.2);
+                border-radius: 0.5rem;
+                color: var(--bodyTextColorWhite);
+                cursor: pointer;
+                height: 2.75rem;
+                max-width: 100%;
+                padding: 0 1rem;
+                width: 100%;
+                transition: border-color 0.15s, background-color 0.15s;
+
+                option {
+                    font-size: 0.9375rem;
+                    background-color: #30312D;
+                    color: var(--bodyTextColorWhite);
+                }
+
+                &:focus {
+                    border-color: var(--primary);
+                    outline: 0;
+                    background-color: rgba(255, 255, 255, 0.15);
+                }
+            }
+        }
+
+        /* Job card styling */
+        .em-career-job-card {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 1.5rem 0;
+            margin-bottom: 0;
+
+            &:last-child {
+                border-bottom: none;
+            }
+        }
+
+        .em-career-job-title {
+            margin-bottom: 0.5rem;
+            font-size: clamp(1.125rem, 2vw, 1.375rem);
+            font-weight: 700;
+            color: var(--bodyTextColorWhite);
+            font-family: var(--headerFont);
+            line-height: 1.3em;
+        }
+
+        .em-career-job-location,
+        .em-career-job-type {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 0.5rem;
+            font-size: 0.9375rem;
+            display: inline-block;
+            margin-right: 1rem;
+        }
+
+        .em-career-job-salary {
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--bodyTextColorWhite);
+            font-size: 1rem;
+        }
+
+        .em-career-job-button {
+            color: #fff;
+            cursor: pointer;
+            margin-top: 0.75rem;
+            font-size: 0.9375rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            /* Button styling matching Contact Us button */
+            background-color: var(--primary);
+            border: 2px solid transparent; /* Transparent border so it doesn't affect layout */
+            border-radius: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            transition: background-color 0.15s, border-color 0.15s, transform 0.15s;
+            text-align: center;
+
+            &:hover {
+                background-color: #272724; /* Dark grey background on hover */
+                border-color: var(--primary); /* Elite red border on hover */
+                transform: translateY(-2px);
+            }
+
+            &:active {
+                transform: translateY(0);
+            }
+        }
+
+        .em-career-job-details {
+            display: none;
+            margin-top: 1rem;
+            padding: 1.5rem;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 0.5rem;
+        }
+
+        .em-career-job-description-show {
+            display: block;
+        }
+
+        .em-career-job-description {
+            font-size: 0.875rem;
+            line-height: 1.6;
+            color: var(--bodyTextColorWhite);
+
+            * {
+                color: var(--bodyTextColorWhite) !important;
+            }
+
+            ol,
+            ul {
+                margin-bottom: 1rem;
+                margin-top: 0;
+                padding-left: 1.5em;
+            }
+
+            ol > li,
+            ul > li {
+                list-style-type: none;
+                position: relative;
+                color: var(--bodyTextColorWhite) !important;
+            }
+
+            ul > li:before {
+                content: "•";
+                color: var(--primary);
+                margin-left: -1.1em;
+                position: absolute;
+            }
+
+            strong {
+                color: var(--bodyTextColorWhite) !important;
+                font-weight: 700;
+            }
+
+            h1, h2, h3, h4, h5, h6, p {
+                margin: 0 !important;
+                color: var(--bodyTextColorWhite) !important;
+            }
+
+            p {
+                margin-bottom: 0.75rem !important;
+                color: var(--bodyTextColorWhite) !important;
+
+                &:last-child {
+                    margin-bottom: 0 !important;
+                }
+            }
+
+            img {
+                max-width: 100%;
+                border-radius: 0.5rem;
+            }
+
+            li {
+                color: var(--bodyTextColorWhite) !important;
+                
+                * {
+                    color: var(--bodyTextColorWhite) !important;
+                }
+            }
+        }
+
+        .em-career-job-apply-btn {
+            background-color: var(--primary);
+            border: 2px solid transparent; /* Transparent border so it doesn't affect layout */
+            border-radius: 0.5rem;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin: 0.75rem 0;
+            max-width: 120px;
+            padding: 0.75rem 1.5rem;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.15s, border-color 0.15s, transform 0.15s;
+
+            &:hover {
+                background-color: #272724; /* Dark grey background on hover */
+                border-color: var(--primary); /* Elite red border on hover */
+                transform: translateY(-2px);
+            }
+
+            &:active {
+                transform: translateY(0);
+            }
+        }
+
+        .em-career-job-error {
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            border-radius: 0.5rem;
+            color: rgba(255, 255, 255, 0.7);
+            display: flex;
+            font-size: 1.25rem;
+            height: 3rem;
+            justify-content: center;
+            margin-top: 1rem;
+            text-align: center;
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #embedding-career-jobs {
+        background-color: #30312D;
+        padding: 2rem;
+        border-radius: 1.5rem;
+        margin: auto;
+        width: 75%;
+        margin-bottom: 5rem;
+        margin-top: 3rem;
+
+        /* Left align the heading on tablet+ */
+        &::before {
+            text-align: left;
+            margin-bottom: 2rem;
+        }
+
+        .em-career-job-search {
+            input {
+                max-width: 300px;
+                width: auto;
+            }
+
+            select {
+                max-width: 300px;
+                width: auto;
+            }
+        }
+
+        .em-career-job-card {
+            padding: 1.5rem 0;
+        }
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #embedding-career-jobs {
+        .em-career-job-search {
+            flex-wrap: nowrap;
+        }
+
+        .em-career-job-card {
+            padding: 2rem 0;
+        }
+    }
+}
