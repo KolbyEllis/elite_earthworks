@@ -79,7 +79,7 @@ pageTitle: 'Contact'
             </form>
             
             <!--Hidden forms for Netlify to detect at build time-->
-            <form name="estimating inquiry" netlify netlify-honeypot="bot-field" hidden>
+            <form name="Estimating Inquiry" netlify netlify-honeypot="bot-field" hidden>
                 <input type="text" name="name" />
                 <input type="email" name="email" />
                 <input type="tel" name="phone" />
@@ -87,7 +87,7 @@ pageTitle: 'Contact'
                 <textarea name="Message"></textarea>
             </form>
             
-            <form name="career inquiry" netlify netlify-honeypot="bot-field" hidden>
+            <form name="Career Inquiry" netlify netlify-honeypot="bot-field" hidden>
                 <input type="text" name="name" />
                 <input type="email" name="email" />
                 <input type="tel" name="phone" />
@@ -95,7 +95,7 @@ pageTitle: 'Contact'
                 <textarea name="Message"></textarea>
             </form>
             
-            <form name="other" netlify netlify-honeypot="bot-field" hidden>
+            <form name="Other" netlify netlify-honeypot="bot-field" hidden>
                 <input type="text" name="name" />
                 <input type="email" name="email" />
                 <input type="tel" name="phone" />
@@ -167,13 +167,13 @@ pageTitle: 'Contact'
                 
                 switch(selectedValue) {
                     case 'Estimating inquiry':
-                        targetFormName = 'estimating inquiry';
+                        targetFormName = 'Estimating Inquiry';
                         break;
                     case 'Career Inquiry':
-                        targetFormName = 'career inquiry';
+                        targetFormName = 'Career Inquiry';
                         break;
                     case 'Other':
-                        targetFormName = 'other';
+                        targetFormName = 'Other';
                         break;
                     default:
                         alert('Please select a purpose of inquiry');
