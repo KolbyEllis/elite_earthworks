@@ -49,7 +49,8 @@ pageTitle: 'Contact'
     <div class="cs-container">
         <div class="cs-content">
             <!--Form-->
-            <form class="cs-form" id="cs-form-323-327" name="Contact Form" method="post" netlify action="/success">
+            <form class="cs-form" id="cs-form-323-327" name="contact-form" method="post" data-netlify="true" action="/success">
+                <input type="hidden" name="form-name" value="contact-form">
                 <label class="cs-label">
                     Name
                     <input class="cs-input" required type="text" name="name" placeholder="Name">
@@ -61,6 +62,15 @@ pageTitle: 'Contact'
                 <label class="cs-label cs-phone">
                     Phone
                     <input class="cs-input" required type="tel" name="phone" placeholder="Phone">
+                </label>
+                <label class="cs-label">
+                    Purpose of Inquiry
+                    <select class="cs-input" required name="purpose-of-inquiry">
+                        <option value="" disabled selected>Select an option...</option>
+                        <option value="Estimating inquiry">Estimating inquiry</option>
+                        <option value="Career Inquiry">Career Inquiry</option>
+                        <option value="Other">Other</option>
+                    </select>
                 </label>
                 <label class="cs-label">
                     Message
@@ -99,6 +109,57 @@ pageTitle: 'Contact'
             <span class="cs-hours-info">(951)-245-2220 </span>
         </div>
     </div>
-</section>                              
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const purposeSelect = document.querySelector('select[name="purpose-of-inquiry"]');
+        const contactForm = document.getElementById('cs-form-323-327');
+        const formNameInput = contactForm.querySelector('input[name="form-name"]');
+        
+        if (purposeSelect && contactForm && formNameInput) {
+            // Remove the disabled placeholder option from dropdown when user interacts with it
+            const placeholderOption = purposeSelect.querySelector('option[disabled]');
+            if (placeholderOption) {
+                function removePlaceholder() {
+                    if (purposeSelect.value === '') {
+                        placeholderOption.remove();
+                    }
+                }
+                
+                purposeSelect.addEventListener('mousedown', removePlaceholder, { once: true });
+                purposeSelect.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        removePlaceholder();
+                    }
+                }, { once: true });
+            }
+            
+            // Change form name based on purpose of inquiry selection
+            purposeSelect.addEventListener('change', function() {
+                const selectedValue = this.value;
+                let formName = 'contact-form';
+                
+                switch(selectedValue) {
+                    case 'Estimating inquiry':
+                        formName = 'estimating-inquiry';
+                        break;
+                    case 'Career Inquiry':
+                        formName = 'career-inquiry';
+                        break;
+                    case 'Other':
+                        formName = 'other-inquiry';
+                        break;
+                    default:
+                        formName = 'contact-form';
+                }
+                
+                // Update form name attribute and hidden form-name input
+                contactForm.setAttribute('name', formName);
+                formNameInput.setAttribute('value', formName);
+            });
+        }
+    });
+</script>
                   
 {% endblock %}
