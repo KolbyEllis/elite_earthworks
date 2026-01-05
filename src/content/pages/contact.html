@@ -48,9 +48,8 @@ pageTitle: 'Contact'
 <section id="contact-2320">
     <div class="cs-container">
         <div class="cs-content">
-            <!--Form-->
-            <form class="cs-form" id="cs-form-323-327" name="contact-form" method="post" data-netlify="true" action="/success">
-                <input type="hidden" name="form-name" value="contact-form">
+            <!--Visible Form-->
+            <form class="cs-form" id="cs-form-323-327" method="post" action="/success">
                 <label class="cs-label">
                     Name
                     <input class="cs-input" required type="text" name="name" placeholder="Name">
@@ -65,7 +64,7 @@ pageTitle: 'Contact'
                 </label>
                 <label class="cs-label">
                     Purpose of Inquiry
-                    <select class="cs-input" required name="purpose-of-inquiry">
+                    <select class="cs-input" required name="purpose-of-inquiry" id="purpose-select">
                         <option value="" disabled selected>Select an option...</option>
                         <option value="Estimating inquiry">Estimating inquiry</option>
                         <option value="Career Inquiry">Career Inquiry</option>
@@ -77,6 +76,31 @@ pageTitle: 'Contact'
                     <textarea class="cs-input cs-textarea" required name="Message" placeholder="Write message..."></textarea>
                 </label>
                 <button class="cs-button-solid cs-submit" type="submit">Send Message</button>
+            </form>
+            
+            <!--Hidden forms for Netlify to detect at build time-->
+            <form name="estimating-inquiry" netlify netlify-honeypot="bot-field" hidden>
+                <input type="text" name="name" />
+                <input type="email" name="email" />
+                <input type="tel" name="phone" />
+                <input type="text" name="purpose-of-inquiry" />
+                <textarea name="Message"></textarea>
+            </form>
+            
+            <form name="career-inquiry" netlify netlify-honeypot="bot-field" hidden>
+                <input type="text" name="name" />
+                <input type="email" name="email" />
+                <input type="tel" name="phone" />
+                <input type="text" name="purpose-of-inquiry" />
+                <textarea name="Message"></textarea>
+            </form>
+            
+            <form name="other-inquiry" netlify netlify-honeypot="bot-field" hidden>
+                <input type="text" name="name" />
+                <input type="email" name="email" />
+                <input type="tel" name="phone" />
+                <input type="text" name="purpose-of-inquiry" />
+                <textarea name="Message"></textarea>
             </form>
         </div>
         <!--Map Image, pin is made in the Figma then export as one image-->
@@ -113,11 +137,10 @@ pageTitle: 'Contact'
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const purposeSelect = document.querySelector('select[name="purpose-of-inquiry"]');
+        const purposeSelect = document.getElementById('purpose-select');
         const contactForm = document.getElementById('cs-form-323-327');
-        const formNameInput = contactForm.querySelector('input[name="form-name"]');
         
-        if (purposeSelect && contactForm && formNameInput) {
+        if (purposeSelect && contactForm) {
             // Remove the disabled placeholder option from dropdown when user interacts with it
             const placeholderOption = purposeSelect.querySelector('option[disabled]');
             if (placeholderOption) {
@@ -135,28 +158,52 @@ pageTitle: 'Contact'
                 }, { once: true });
             }
             
-            // Change form name based on purpose of inquiry selection
-            purposeSelect.addEventListener('change', function() {
-                const selectedValue = this.value;
-                let formName = 'contact-form';
+            // Handle form submission - route to correct Netlify form
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const selectedValue = purposeSelect.value;
+                let targetFormName = '';
                 
                 switch(selectedValue) {
                     case 'Estimating inquiry':
-                        formName = 'estimating-inquiry';
+                        targetFormName = 'estimating-inquiry';
                         break;
                     case 'Career Inquiry':
-                        formName = 'career-inquiry';
+                        targetFormName = 'career-inquiry';
                         break;
                     case 'Other':
-                        formName = 'other-inquiry';
+                        targetFormName = 'other-inquiry';
                         break;
                     default:
-                        formName = 'contact-form';
+                        alert('Please select a purpose of inquiry');
+                        return;
                 }
                 
-                // Update form name attribute and hidden form-name input
-                contactForm.setAttribute('name', formName);
-                formNameInput.setAttribute('value', formName);
+                // Get the target hidden form
+                const targetForm = document.querySelector(`form[name="${targetFormName}"]`);
+                if (!targetForm) {
+                    alert('Form error. Please try again.');
+                    return;
+                }
+                
+                // Create FormData from visible form
+                const formData = new FormData(contactForm);
+                formData.append('form-name', targetFormName);
+                
+                // Submit to Netlify using fetch
+                fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                })
+                .then(() => {
+                    window.location.href = '/success';
+                })
+                .catch((error) => {
+                    console.error('Form submission error:', error);
+                    alert('There was an error submitting the form. Please try again.');
+                });
             });
         }
     });
